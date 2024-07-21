@@ -1,3 +1,23 @@
+/*
+Enter the n value: 4
+Enter the string:
+thisstringistypedwithoutgap
+t  r  t  i  g
+h ti sy wt ta
+is ni pd hu p
+s  g  e  o
+
+Enter the n value: 5
+Enter the string:
+thisstringistypedwithoutgap
+t   n   d   g
+h  ig  ew  ta
+i r i p i u p
+st  sy  to
+s   t   h
+
+*/
+
 import java.util.*;
 class NPattern{
     public static void main(String args[]){

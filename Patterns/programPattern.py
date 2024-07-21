@@ -1,22 +1,27 @@
 import math as m
 '''
-P            M
-  R       A
-    O   R
-       G
-    O   R
-  R       A
-P            M
+Enter the string: program
+ p          m
+   r      a
+     o  r
+       g
+     o  r
+   r      a
+ p          m
 
-
-PROGRAM
-PROGRAM
-
-
-
+ Enter the string: nagarajaI
+ n              I
+   a          a
+     g      j
+       a  a
+         r
+       a  a
+     g      j
+   a          a
+ n              I
 
 '''
-string='PROGRAM'
+string=input("Enter the string: ")
 nspaces=2
 space=' '*nspaces
 i,n=0,len(string)
