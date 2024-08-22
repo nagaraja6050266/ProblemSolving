@@ -4,26 +4,29 @@ import java.util.Stack;
 class nestedRepeat {
 
     public static void main(String[] args) {
-        String s = "2[a2[bc]]";
+        String s = "3[a2[bc]4[p]]3[yu]";
         char[] charArray = s.toCharArray();
-        Stack<String> stack = new Stack<String>();
-        String result = "";
-        // stack.push("a");
+        Stack<String> stack = new Stack<>();
         for (char i : charArray) {
             if (i != ']') {
                 stack.push(Character.toString(i));
             } else {
+                String temp = "";
                 while (!stack.peek().equals("[")) {
-                    System.out.println("Current Character " + stack.peek());
-                    result = stack.pop() + result;
+                    temp = stack.pop() + temp;
                 }
                 stack.pop();
-                result = result.repeat(Integer.parseInt(stack.pop()));
-                System.out.println("Current result: " + result);
-                stack.push(result);
+                stack.push(temp.repeat(Integer.parseInt(stack.pop())));
             }
-
-            System.out.println(result);
         }
+        printStack(stack);
+    }
+
+    static void printStack(Stack<String> stack) {
+        String s = "";
+        for (String i : stack) {
+            s += i;
+        }
+        System.out.println(s);
     }
 }
