@@ -1,14 +1,13 @@
 class Solution {
     public String reverseVowels(String s) {
-        String vowels="aeiouAEIOU";
         char[] result=s.toCharArray();
         int left=0,right=result.length-1;
         while(left<right){
-            if(vowels.indexOf(result[left])==-1){
+            if(!(result[left]=='a'||result[left]=='e'||result[left]=='i'||result[left]=='o'||result[left]=='u'||result[left]=='A'||result[left]=='E'||result[left]=='I'||result[left]=='O'||result[left]=='U')){
                 left++;
                 continue;
             }
-            if(vowels.indexOf(result[right])==-1){
+            if(!(result[right]=='a'||result[right]=='e'||result[right]=='i'||result[right]=='o'||result[right]=='u'||result[right]=='A'||result[right]=='E'||result[right]=='I'||result[right]=='O'||result[right]=='U')){
                 right--;
                 continue;
             }
