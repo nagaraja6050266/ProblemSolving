@@ -5,7 +5,7 @@ class Solution {
             while(n>0){
                 sum+=((n%10)*(n%10));
                 n/=10;
-                System.out.println(sum);
+                //System.out.println(sum);
             }
             n=sum;
         }
