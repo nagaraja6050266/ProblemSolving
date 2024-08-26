@@ -3,7 +3,7 @@ import java.util.Stack;
 class nestedRepeat {
 
     public static void main(String[] args) {
-        String s = "3[a2[bc]4[p]]3[yu]";
+        String s = "3[a2[bc]]";
         char[] charArray = s.toCharArray();
         Stack<String> stack = new Stack<>();
         for (char i : charArray) {
