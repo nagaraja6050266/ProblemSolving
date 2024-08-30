@@ -1,7 +1,13 @@
 class Solution {
     public int uniquePaths(int m, int n) {
-        int max=Math.max(m,n)-1;
-        int min=Math.min(m,n)-1;
+        int max,min;
+        if(m>=n){
+            max=m-1;
+            min=n-1;
+        }else{
+            max=n-1;
+            min=m-1;
+        }
         double result=1;
         for(int i=m+n-2;i>max;i--){
             result*=i;
