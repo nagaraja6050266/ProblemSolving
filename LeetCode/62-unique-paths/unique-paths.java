@@ -14,7 +14,7 @@ class Solution {
             if(min>1){
                 result/=min--;
             }
-            System.out.println(result);
+            //System.out.println(result);
         }
         return (int)(Math.round(result));
     }
