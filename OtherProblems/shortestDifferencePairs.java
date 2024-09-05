@@ -1,3 +1,5 @@
+package OtherProblems;
+
 class shortestDifferencePairs{
     public static void main(String args[]){
         int[] arr={12,34,53,11,4,7,15};

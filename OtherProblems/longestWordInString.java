@@ -1,4 +1,5 @@
-import java.lang.Math;
+package OtherProblems;
+
 class longestWordInString{
     public static void main(String args[]){
         String s="I loveddd India";

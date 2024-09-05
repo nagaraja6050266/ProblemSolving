@@ -1,3 +1,5 @@
+package OtherProblems;
+
 import java.util.HashMap;
 
 class isomorphicString{

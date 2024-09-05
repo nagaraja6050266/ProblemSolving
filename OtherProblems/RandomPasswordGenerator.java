@@ -1,5 +1,6 @@
+package OtherProblems;
+
 import java.util.Random;
-import  java.util.Arrays;
 
 public class RandomPasswordGenerator {
     static int i = 0;

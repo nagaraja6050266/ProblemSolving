@@ -1,3 +1,5 @@
+package OtherProblems;
+
 import java.util.*;
 
 class evaluate{
@@ -5,12 +7,10 @@ class evaluate{
         Scanner sc=new Scanner(System.in);
         System.out.println("Enter the expression: ");
         String expression=sc.nextLine();
-        int[] arr=expression.toArray();
-        
-
+        char[] arr=expression.toCharArray();
     }
     
     public float bracket(int[] arr){
-        
+        return 1.0F;
     }
 }

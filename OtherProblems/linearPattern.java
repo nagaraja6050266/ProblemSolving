@@ -1,3 +1,5 @@
+package OtherProblems;
+
 class linearPattern{
     public static void main(String[] args) {
         int n=16,k=7,c=n+k;

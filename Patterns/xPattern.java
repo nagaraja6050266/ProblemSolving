@@ -14,10 +14,10 @@ class xPattern{
         for(int i=0;i<n;i++){
             for (int j=0;j<n;j++){
                 if (i==j || j==n-i-1){
-                    System.out.print(s.charAt(j));
+                    System.out.print(s.charAt(j)+" ");
                 }
                 else{
-                    System.out.print(" ");
+                    System.out.print("  ");
                 }
             }
             System.out.println();
