@@ -1,19 +1,20 @@
 class Solution {
     public void rotate(int[][] matrix) {
-        //Worst approach
         int n=matrix.length;
-        int[][] result=new int[n][n];
         for(int i=0;i<n;i++){
-            for(int j=0;j<n;j++){
-                result[i][j]=matrix[n-j-1][i];
-                System.out.print(result[i][j]+" ");
-            }
-            System.out.println();
-        }
-        for(int i=0;i<n;i++){
-            for(int j=0;j<n;j++){
-                matrix[i][j]=result[i][j];
+            for(int j=0;j<i;j++){
+                swap(matrix,i,j,j,i);
             }
         }
+        for(int i=0;i<n;i++){
+            for(int j=0;j<n/2;j++){
+                swap(matrix,i,j,i,n-j-1);
+            }
+        }
+    }
+    public static void swap(int[][] matrix,int i,int j,int a,int b){
+        int temp=matrix[a][b];
+        matrix[a][b]=matrix[i][j];
+        matrix[i][j]=temp;
     }
 }
