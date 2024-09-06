@@ -1,4 +1,3 @@
-
 class MyDate {
     //Constructor
     MyDate(int day, int month, int year) {

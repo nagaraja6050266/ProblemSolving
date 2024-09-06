@@ -1,5 +1,4 @@
 
-import java.util.Arrays;
 
 class kthMax {
 
@@ -7,7 +6,7 @@ class kthMax {
         int[] array = {1, 45, 6, 7, 48, 3, 5, 7, 342, 678, 3, 67, 24};
         int k = 5;
         bubbleSortUpto(array, k);
-        System.out.println(Arrays.toString(array));
+        // System.out.println(Arrays.toString(array));
         System.out.println("K th Max is " + array[array.length - k]);
     }
 
