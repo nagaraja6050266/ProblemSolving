@@ -6,8 +6,8 @@ class isomorphicString{
     public static void main(String args[]){
         String a="aaabbbbbb",b="cccdddddd";
         int value;
-        HashMap<Character,Integer> mapA=new HashMap<Character,Integer>();
-        HashMap<Character,Integer> mapB=new HashMap<Character,Integer>();
+        HashMap<Character,Integer> mapA=new HashMap<>();
+        HashMap<Character,Integer> mapB=new HashMap<>();
         for (int i=0;i<a.length();i++){
             try{
                 value=mapA.get(a.charAt(i));
