@@ -1,4 +1,7 @@
+
 class MyDate {
+
+
     //Constructor
     MyDate(int day, int month, int year) {
         if (DateOperations.isValid(day, month, year)) {
@@ -45,6 +48,31 @@ class MyDate {
         return validDates;
     }
 
+    public void addDays(int daysToAdd) {
+        int day = this.getDay();
+        int month = this.getMonth();
+        int year = this.getYear();
+        int[] validDays = MyDate.getValidDays(year);
+
+        //Increase Months untill addable days come
+        while (daysToAdd > 0) {
+            if (daysToAdd + day < validDays[month - 1]) {
+                day += daysToAdd;
+                break;
+            } else {
+                daysToAdd -= validDays[month - 1] + day - 1;
+                month++;
+                if (month > 12) {
+                    month = 1;
+                    year++;
+                }
+            }
+        }
+        this.setMonth(month);
+        this.setDay(day);
+        this.setYear(year);
+    }
+
     @Override
     public String toString() {
         return day + "/" + month + "/" + year;
@@ -71,38 +99,13 @@ class DateOperations {
             return year % 4 == 0;
         }
     }
-
-    public static void addDays(MyDate date, int daysToAdd) {
-        int day = date.getDay();
-        int month = date.getMonth();
-        int year = date.getYear();
-        int[] validDays = MyDate.getValidDays(year);
-
-        //Increase Months untill addable days come
-        while (daysToAdd > 0) {
-            if (daysToAdd + day < validDays[month - 1]) {
-                day += daysToAdd;
-                break;
-            } else {
-                daysToAdd -= validDays[month - 1] + day - 1;
-                month++;
-                if (month > 12) {
-                    month = 1;
-                    year++;
-                }
-            }
-        }
-        date.setMonth(month);
-        date.setDay(day);
-        date.setYear(year);
-    }
-
 }
 
 class Calendar {
+
     public static void main(String[] args) {
         MyDate today = new MyDate(5, 9, 2024);
-        DateOperations.addDays(today, 45);
+        today.addDays(56);
         System.out.println(today.toString());
     }
 }
