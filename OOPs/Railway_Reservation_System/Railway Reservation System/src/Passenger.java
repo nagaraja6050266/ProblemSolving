@@ -1,22 +1,24 @@
 public class Passenger {
     private String name;
     private int id;
-    private boolean isAllotted = false;
+    private String status = "Not Allotted";
     private int seatNumber;
     private String allotedBerth;
     private String preferredBerth = "RAC";
 
+    public void allotSeat(int seatNumber, String berth) {
+        this.allotedBerth = berth;
+        this.seatNumber = seatNumber;
+    }
+
+    //Setters
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
     //Getters
     public String getName() {
         return name;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public int getSeatNumber() {
-        return seatNumber;
     }
 
     public String getAllotedBerth() {
@@ -27,8 +29,11 @@ public class Passenger {
         return preferredBerth;
     }
 
-    //Constructor
+    public String getStatus() {
+        return status;
+    }
 
+    //Constructor
     Passenger(String name, int id, String preferredBerth) {
         this.id = id;
         this.name = name;
@@ -37,12 +42,11 @@ public class Passenger {
 
     //Display Details
     public void getDetails() {
-        System.out.println("Name: " + name + "\nID: " + id);
-        if (isAllotted) {
-            System.out.println("Seat Number: " + seatNumber + "\nBerth: " + allotedBerth);
+        System.out.print("\nName: " + name + "\nID: " + id + "\nStatus: ");
+        if (status.equals("Allotted")) {
+            System.out.println("Allotted\nSeat Number: " + seatNumber + "\nBerth: " + allotedBerth);
         } else {
-            System.out.println("No Seat Allotted");
+            System.out.println(status);
         }
     }
-
 }
