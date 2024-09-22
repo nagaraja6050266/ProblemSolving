@@ -69,7 +69,6 @@ class Relations {
         Member esakki = new Member("Esakki Muthu", Gender.MALE);
         Member masanam = new Member("Masanam", Gender.MALE);
         Member dummy = new Member("Suppaiya", Gender.MALE);
-        Member Manimother = new Member("Bala", Gender.MALE);
         Member sandhiya = new Member("Sandhiya", Gender.FEMALE);
         Member muthulakshmi = new Member("Muthulakshmi", Gender.FEMALE);
 
@@ -78,6 +77,7 @@ class Relations {
         masanam.setFather(dummy);
         sandhiya.setChildren(muthulakshmi);
         esakki.setSibling(sandhiya);
+
 
         mani.getAtthaPonnu();
 
