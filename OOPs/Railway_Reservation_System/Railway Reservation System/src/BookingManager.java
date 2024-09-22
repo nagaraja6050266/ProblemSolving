@@ -4,7 +4,7 @@ public class BookingManager {
 
     private static Map<String, Integer> seats = new HashMap<>();
 
-    public static void setSeats(int upper, int middle, int lower) {
+    private static void setSeats(int upper, int middle, int lower) {
         seats.put("U", upper);
         seats.put("M", middle);
         seats.put("L", lower);
@@ -84,7 +84,7 @@ public class BookingManager {
         }
     }
 
-    public static void bookTicket(Passenger passenger) {
+    private static void bookTicket(Passenger passenger) {
         if (!allotBerth(passenger)) {
             addToRAC(passenger);
         }
@@ -92,7 +92,7 @@ public class BookingManager {
         passenger.getDetails();
     }
 
-    public static void cancelTicket(Passenger passenger) {
+    private static void cancelTicket(Passenger passenger) {
         String status = passenger.getStatus();
         switch (status) {
             case "Allotted":

@@ -1,0 +1,13 @@
+<web-app>
+
+    <servlet>
+        <servlet-name>GetEmployeeServlet</servlet-name>
+        <servlet-class>org.example.EmployeeServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>GetEmployeeServlet</servlet-name>
+        <url-pattern>/employees/*</url-pattern>
+    </servlet-mapping>
+
+</web-app>

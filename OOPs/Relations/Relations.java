@@ -1,25 +1,42 @@
 
 import java.util.ArrayList;
 
+enum Gender {
+    MALE, FEMALE
+}
+
 class Member {
 
     public String name;
     public Member father;
     public Member mother;
     public ArrayList<Member> siblings = new ArrayList<>();
-    public String gender;
+    public Gender gender;
+
+    public ArrayList<Member> children = new ArrayList<>();
 
     public void setFather(Member father) {
         this.father = father;
-        // System.out.println("Setted" + father.name);
+        father.children.add(this);
     }
 
-    public void setMother(Member mother){
-        this.mother=mother;
+    public void setMother(Member mother) {
+        this.mother = mother;
+        mother.children.add(this);
     }
 
-    Member(String name) {
+    Member(String name,Gender gender) {
         this.name = name;
+        this.gender = gender;
+    }
+
+    public void setChildren(Member child){
+        this.children.add(child);
+        if(this.gender==Gender.MALE){
+            child.setFather(this);
+        } else {
+            child.setMother(this);
+        }
     }
 
 }
@@ -27,11 +44,11 @@ class Member {
 class Relations {
 
     public static void main(String[] args) {
-        Member mani = new Member("Manikandan");
-        Member esakki = new Member("Esakki Muthu");
-        Member masanam = new Member("Masanam");
-        Member dummy = new Member("Suppaiya");
-        Member Manimother = new Member("Bala");
+        Member mani = new Member("Manikandan", Gender.MALE);
+        Member esakki = new Member("Esakki Muthu",Gender.MALE);
+        Member masanam = new Member("Masanam",Gender.MALE);
+        Member dummy = new Member("Suppaiya",Gender.MALE);
+        Member Manimother = new Member("Bala",Gender.MALE);
 
 
         mani.setFather(esakki);
