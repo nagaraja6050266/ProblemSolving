@@ -1,10 +1,12 @@
-package org.inr.tutorial.messenger;
+package org.inr.tutorial.messenger.resources;
 
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import org.inr.tutorial.messenger.dao.CustomersDao;
+import org.inr.tutorial.messenger.dao.InvoicesDao;
 import org.inr.tutorial.messenger.model.Customer;
+import org.inr.tutorial.messenger.model.Invoice;
 
 import java.util.List;
 
@@ -14,11 +16,12 @@ import java.util.List;
 public class CustomersResource {
 
     CustomersDao customersDao = new CustomersDao();
+    InvoicesDao invoicesDao = new InvoicesDao();
 
     @GET
     public Response getAllCustomers() {
         List<Customer> customers = customersDao.getAllCustomers();
-        if (customers == null) {
+        if (customers.isEmpty()) {
             return Response.status(Response.Status.NO_CONTENT)
                     .entity("No customers in Database")
                     .build();
@@ -70,6 +73,18 @@ public class CustomersResource {
                     .build();
         }
         return Response.ok(customer).build();
+    }
+
+    @Path("/{customerId}/invoices")
+    @GET
+    public Response getCustomerInvoices(@PathParam("customerId") int customerId){
+        List<Invoice> customerInvoices = invoicesDao.getCustomerInvoice(customerId);
+        if(customerInvoices.isEmpty()){
+            return Response.status(Response.Status.NO_CONTENT)
+                    .entity("Customer with id " + customerId + " have no invoices")
+                    .build();
+        }
+        return Response.ok(customerInvoices).build();
     }
 
 }

@@ -4,7 +4,7 @@ public class Item {
     private int id;
     private float price;
     private String name;
-    private int quantity = 0;
+    private float quantity = 0;
 
     public Item() {
     }
@@ -38,11 +38,11 @@ public class Item {
         this.name = name;
     }
 
-    public int getQuantity() {
+    public float getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(int quantity) {
+    public void setQuantity(float quantity) {
         this.quantity = quantity;
     }
 }

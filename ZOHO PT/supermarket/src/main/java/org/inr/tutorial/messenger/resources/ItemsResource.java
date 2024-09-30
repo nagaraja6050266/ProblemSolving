@@ -1,4 +1,4 @@
-package org.inr.tutorial.messenger;
+package org.inr.tutorial.messenger.resources;
 
 //import jakarta.ws.rs.*;
 //import jakarta.ws.rs.core.MediaType;
@@ -77,7 +77,7 @@ public class ItemsResource {
     @GET
     public Response getAllItems() {
         List<Item> items = itemsDao.getAllItems();
-        if (items == null) {
+        if (items.isEmpty()) {
             return Response.status(Response.Status.NO_CONTENT)
                     .entity("No items in Database")
                     .build();

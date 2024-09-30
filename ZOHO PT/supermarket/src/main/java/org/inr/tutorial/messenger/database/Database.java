@@ -1,14 +1,19 @@
 package org.inr.tutorial.messenger.database;
 
 import org.inr.tutorial.messenger.model.Customer;
+import org.inr.tutorial.messenger.model.Invoice;
 import org.inr.tutorial.messenger.model.Item;
+import org.inr.tutorial.messenger.model.Purchase;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class Database {
     private static Map<Integer, Item> items = new HashMap<>();
     private static Map<Integer, Customer> customers = new HashMap<>();
+    private static Map<Integer, Invoice> invoices = new HashMap<>();
 
     static {
         Item milk = new Item("Milk", 3);
@@ -28,12 +33,24 @@ public class Database {
         customers.put(2, eeshu);
     }
 
+    static {
+        List<Purchase> purchaseList = new ArrayList<>();
+        purchaseList.add(new Purchase(1, 5));
+        purchaseList.add(new Purchase(2, 3));
+        Invoice invoice1 = new Invoice(1, purchaseList);
+        invoices.put(1,invoice1);
+    }
+
     public static Map<Integer, Item> getItems() {
         return items;
     }
 
     public static Map<Integer, Customer> getCustomers() {
         return customers;
+    }
+
+    public static Map<Integer, Invoice> getInvoices() {
+        return invoices;
     }
 }
 
