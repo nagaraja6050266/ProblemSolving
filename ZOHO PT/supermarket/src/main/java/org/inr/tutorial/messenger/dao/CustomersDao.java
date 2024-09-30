@@ -27,6 +27,7 @@ public class CustomersDao {
 
     public Customer editCustomer(int id, Customer customer) {
         if (Database.getCustomers().containsKey(id)) {
+            customer.setId(id);
             Database.getCustomers().put(id, customer);
             return customer;
         }

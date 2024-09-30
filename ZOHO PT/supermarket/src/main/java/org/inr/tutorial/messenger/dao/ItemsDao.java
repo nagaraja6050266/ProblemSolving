@@ -27,6 +27,7 @@ public class ItemsDao {
 
     public Item editItem(int id,Item item){
         if(Database.getItems().containsKey(id)){
+            item.setId(id);
             Database.getItems().put(id,item);
             return item;
         }
