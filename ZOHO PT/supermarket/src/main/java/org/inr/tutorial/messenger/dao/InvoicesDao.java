@@ -82,7 +82,6 @@ public class InvoicesDao {
             invoice.setPurchases(createPurchaseList(purchaseRs));
             invoiceList.add(invoice);
         }
-
         return invoiceList;
     }
 
@@ -127,5 +126,4 @@ public class InvoicesDao {
         }
         return purchaseList;
     }
-
 }
