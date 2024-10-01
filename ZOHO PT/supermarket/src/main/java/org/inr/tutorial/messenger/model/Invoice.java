@@ -11,6 +11,18 @@ public class Invoice {
     private Date date;
     private float totalAmount = 0;
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    public void setTotalAmount(float totalAmount) {
+        this.totalAmount = totalAmount;
+    }
+
     public void setCustomerId(int customerId) {
         this.customerId = customerId;
     }
@@ -44,17 +56,24 @@ public class Invoice {
 
     public Invoice() {
         System.out.println("no argumented");
-        this.id = Database.getInvoices().size() + 1;
         this.date = new Date();
     }
 
-    public Invoice(int customerId, List<Purchase> purchases) {
+    public Invoice(int id,int customerId, List<Purchase> purchases) {
         setCustomerId(customerId);
         setPurchases(purchases);
-        this.id = Database.getInvoices().size() + 1;
+        this.id = id;
         this.date = new Date();
         System.out.println("Called argumented");
     }
+
+    public Invoice(int id,int customerId,Date date,float totalAmount){
+        this.id=id;
+        this.customerId=customerId;
+        this.date=date;
+        this.totalAmount=totalAmount;
+    }
+
 
 //    public void addItemToInvoice(int itemId, float quantity) {
 //        if (purchases.containsKey(itemId)) {

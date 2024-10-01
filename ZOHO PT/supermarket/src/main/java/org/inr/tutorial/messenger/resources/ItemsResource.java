@@ -65,6 +65,7 @@ import jakarta.ws.rs.core.Response;
 import org.inr.tutorial.messenger.dao.ItemsDao;
 import org.inr.tutorial.messenger.model.Item;
 
+import java.sql.SQLException;
 import java.util.List;
 
 @Path("/items")
@@ -76,59 +77,61 @@ public class ItemsResource {
 
     @GET
     public Response getAllItems() {
-        List<Item> items = itemsDao.getAllItems();
-        if (items.isEmpty()) {
-            return Response.status(Response.Status.NO_CONTENT)
-                    .entity("No items in Database")
+        try {
+            List<Item> items = itemsDao.getAllItems();
+            return Response.ok(items).build();
+        } catch (SQLException e) {
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
+                    .entity("Error: " + e.toString())
                     .build();
         }
-        return Response.ok(items).build();
     }
 
     @GET
     @Path("/{itemId}")
     public Response getItemById(@PathParam("itemId") int id) {
-        Item item = itemsDao.getItemById(id);
-        if (item == null) {
-            return Response.status(Response.Status.NOT_FOUND)
-                    .entity("Item with id " + id + " not found")
+        try {
+            return Response.ok(itemsDao.getItemById(id)).build();
+        } catch (SQLException e) {
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
+                    .entity("Error: " + e.toString())
                     .build();
         }
-        return Response.ok(item).build();
     }
 
     @POST
     public Response createItem(Item item) {
-        if (item == null || item.getName() == null || item.getPrice() == 0) {
-            return Response.status(Response.Status.BAD_REQUEST)
-                    .entity("Incorrect input")
+        try {
+            return Response.ok(itemsDao.addItem(item)).build();
+        } catch (SQLException e) {
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
+                    .entity("Error: " + e.toString())
                     .build();
         }
-        return Response.ok(itemsDao.addItem(item)).build();
     }
 
     @PUT
     @Path("/{itemId}")
     public Response editItem(@PathParam("itemId") int id, Item item) {
-        Item editedItem = itemsDao.editItem(id, item);
-        if (editedItem == null) {
-            return Response.status(Response.Status.NOT_FOUND)
-                    .entity("Item with id " + id + " not found")
+        try {
+            return Response.ok(itemsDao.editItem(id, item)).build();
+        } catch (SQLException e) {
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
+                    .entity("Error: " + e.toString())
                     .build();
         }
-        return Response.ok(editedItem).build();
     }
 
     @DELETE
     @Path("/{itemId}")
     public Response deleteItem(@PathParam("itemId") int id) {
-        Item item = itemsDao.deleteItem(id);
-        if (item == null) {
-            return Response.status(Response.Status.NOT_FOUND)
-                    .entity("Item with id " + id + " not found")
+        try {
+            return Response.ok(itemsDao.deleteItem(id) >= 1 ? "Deleted" : "Not Deleted").build();
+        } catch (SQLException e) {
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
+                    .entity("Error: " + e.toString())
                     .build();
         }
-        return Response.ok(item).build();
     }
 
 }

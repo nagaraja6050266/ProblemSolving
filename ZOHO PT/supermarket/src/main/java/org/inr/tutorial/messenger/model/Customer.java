@@ -8,10 +8,12 @@ public class Customer {
     public Customer() {
     }
 
-    public Customer(String name,String phNumber) {
+    public Customer(int id,String name, String phNumber) {
+        this.id=id;
         this.name = name;
-        this.phNumber=phNumber;
+        this.phNumber = phNumber;
     }
+
 
     public int getId() {
         return id;

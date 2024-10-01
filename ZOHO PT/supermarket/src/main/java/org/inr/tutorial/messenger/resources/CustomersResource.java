@@ -4,10 +4,11 @@ import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import org.inr.tutorial.messenger.dao.CustomersDao;
-import org.inr.tutorial.messenger.dao.InvoicesDao;
+//import org.inr.tutorial.messenger.dao.InvoicesDao;
 import org.inr.tutorial.messenger.model.Customer;
-import org.inr.tutorial.messenger.model.Invoice;
+//import org.inr.tutorial.messenger.model.Invoice;
 
+import java.sql.SQLException;
 import java.util.List;
 
 @Path("/customers")
@@ -16,75 +17,80 @@ import java.util.List;
 public class CustomersResource {
 
     CustomersDao customersDao = new CustomersDao();
-    InvoicesDao invoicesDao = new InvoicesDao();
+//    InvoicesDao invoicesDao = new InvoicesDao();
 
     @GET
     public Response getAllCustomers() {
-        List<Customer> customers = customersDao.getAllCustomers();
-        if (customers.isEmpty()) {
+        try {
+            List<Customer> customers = customersDao.getAllCustomers();
+            return Response.ok(customers).build();
+        } catch (SQLException e) {
+            System.out.println(e.toString());
             return Response.status(Response.Status.NO_CONTENT)
-                    .entity("No customers in Database")
+                    .entity("Error: "+e.toString())
                     .build();
         }
-        return Response.ok(customers).build();
     }
 
     @GET
     @Path("/{customerId}")
     public Response getCustomerById(@PathParam("customerId") int id) {
-        Customer customer = customersDao.getCustomerById(id);
-        if (customer == null) {
+        try {
+            Customer customer = customersDao.getCustomerById(id);
+            return Response.ok(customer).build();
+        } catch (SQLException e) {
+            System.out.println(e.toString());
             return Response.status(Response.Status.NOT_FOUND)
-                    .entity("Customer with id " + id + " not found")
+                    .entity("Error "+e.toString())
                     .build();
         }
-        return Response.ok(customer).build();
     }
 
     @POST
     public Response createCustomer(Customer customer) {
-        if (customer == null || customer.getName() == null || customer.getPhNumber() == null) {
+        try {
+            return Response.ok(customersDao.addCustomer(customer)).build();
+        } catch (SQLException e) {
             return Response.status(Response.Status.BAD_REQUEST)
-                    .entity("Incorrect input")
+                    .entity("Error "+e.toString())
                     .build();
         }
-        return Response.ok(customersDao.addCustomer(customer)).build();
     }
 
     @PUT
     @Path("/{customerId}")
     public Response editCustomer(@PathParam("customerId") int id, Customer customer) {
-        Customer editedCustomer = customersDao.editCustomer(id, customer);
-        if (editedCustomer == null) {
+        try {
+            return Response.ok(customersDao.editCustomer(id, customer) >= 1 ? customer : "Nothing Edited").build();
+        } catch (SQLException e) {
             return Response.status(Response.Status.NOT_FOUND)
-                    .entity("Customer with id " + id + " not found")
+                    .entity("Error: "+e.toString())
                     .build();
         }
-        return Response.ok(editedCustomer).build();
     }
 
     @DELETE
     @Path("/{customerId}")
     public Response deleteCustomer(@PathParam("customerId") int id) {
-        Customer customer = customersDao.deleteCustomer(id);
-        if (customer == null) {
+        try {
+            return Response.ok(customersDao.deleteCustomer(id)).build();
+        } catch (SQLException e) {
             return Response.status(Response.Status.NOT_FOUND)
-                    .entity("Customer with id " + id + " not found")
+                    .entity("Error: "+e.toString())
                     .build();
         }
-        return Response.ok(customer).build();
     }
 
-    @Path("/{customerId}/invoices")
-    @GET
-    public Response getCustomerInvoices(@PathParam("customerId") int customerId){
-        List<Invoice> customerInvoices = invoicesDao.getCustomerInvoice(customerId);
-        if(customerInvoices.isEmpty()){
-            return Response.status(Response.Status.NO_CONTENT)
-                    .entity("Customer with id " + customerId + " have no invoices")
-                    .build();
-        }
-        return Response.ok(customerInvoices).build();
-    }
+//    @Path("/{customerId}/invoices")
+//    @GET
+//    public Response getCustomerInvoices(@PathParam("customerId") int customerId) {
+//        List<Invoice> customerInvoices = invoicesDao.getCustomerInvoice(customerId);
+//        if (customerInvoices.isEmpty()) {
+//            return Response.status(Response.Status.NO_CONTENT)
+//                    .entity("Customer with id " + customerId + " have no invoices")
+//                    .build();
+//        }
+//        return Response.ok(customerInvoices).build();
+//    }
 
 }
