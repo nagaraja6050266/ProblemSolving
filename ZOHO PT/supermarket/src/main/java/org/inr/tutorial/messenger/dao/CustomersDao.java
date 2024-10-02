@@ -3,8 +3,6 @@ package org.inr.tutorial.messenger.dao;
 import org.inr.tutorial.messenger.database.Database;
 import org.inr.tutorial.messenger.model.Customer;
 
-import javax.xml.transform.Result;
-import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -13,9 +11,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CustomersDao {
-
+    Connection connection = Database.getConnection();
     public Customer addCustomer(Customer customer) throws SQLException {
-        Connection connection = Database.getConnection();
         String query = "insert into customers values(?,?,?)";
         PreparedStatement statement = connection.prepareStatement(query);
         statement.setInt(1, customer.getId());
@@ -26,12 +23,10 @@ public class CustomersDao {
     }
 
     public Customer getCustomerById(int id) throws SQLException {
-        Connection connection = Database.getConnection();
         String query = "select * from customers where id=?";
         PreparedStatement statement = connection.prepareStatement(query);
         statement.setInt(1, id);
         ResultSet resultSet = statement.executeQuery();
-//        System.out.println(resultSet.toString());
         if (resultSet.next()) {
             return createCustomer(resultSet);
         }
@@ -39,7 +34,6 @@ public class CustomersDao {
     }
 
     public List<Customer> getAllCustomers() throws SQLException {
-        Connection connection = Database.getConnection();
         String query = "select * from customers";
         PreparedStatement statement = connection.prepareStatement(query);
         ResultSet resultSet = statement.executeQuery();
@@ -51,7 +45,6 @@ public class CustomersDao {
     }
 
     public int editCustomer(int id, Customer customer) throws SQLException {
-        Connection connection = Database.getConnection();
         String query = "update customers set id=?,name=?,phNumber=? where id=?";
         PreparedStatement statement = connection.prepareStatement(query);
         statement.setInt(1, customer.getId());
@@ -63,7 +56,6 @@ public class CustomersDao {
     }
 
     public int deleteCustomer(int id) throws SQLException {
-        Connection connection = Database.getConnection();
         String query = "delete from customers where id=?";
         PreparedStatement statement = connection.prepareStatement(query);
         statement.setInt(1, id);

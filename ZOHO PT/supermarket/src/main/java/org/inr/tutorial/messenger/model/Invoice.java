@@ -11,20 +11,40 @@ public class Invoice {
     private Date date;
     private float totalAmount = 0;
 
+    public int getId() {
+        return id;
+    }
+
     public void setId(int id) {
         this.id = id;
+    }
+
+    public Date getDate() {
+        return date;
     }
 
     public void setDate(Date date) {
         this.date = date;
     }
 
+    public float getTotalAmount() {
+        return totalAmount;
+    }
+
     public void setTotalAmount(float totalAmount) {
         this.totalAmount = totalAmount;
     }
 
+    public int getCustomerId() {
+        return customerId;
+    }
+
     public void setCustomerId(int customerId) {
         this.customerId = customerId;
+    }
+
+    public List<Purchase> getPurchases() {
+        return purchases;
     }
 
     public void setPurchases(List<Purchase> purchases) {
@@ -34,44 +54,16 @@ public class Invoice {
         this.purchases = purchases;
     }
 
-    public float getTotalAmount() {
-        return totalAmount;
-    }
-
-    public Date getDate() {
-        return date;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public int getCustomerId() {
-        return customerId;
-    }
-
-    public List<Purchase> getPurchases() {
-        return purchases;
-    }
-
     public Invoice() {
         System.out.println("no argumented");
         this.date = new Date();
     }
 
-    public Invoice(int id,int customerId, List<Purchase> purchases) {
-        setCustomerId(customerId);
-        setPurchases(purchases);
+    public Invoice(int id, int customerId, Date date, float totalAmount) {
         this.id = id;
-        this.date = new Date();
-        System.out.println("Called argumented");
-    }
-
-    public Invoice(int id,int customerId,Date date,float totalAmount){
-        this.id=id;
-        this.customerId=customerId;
-        this.date=date;
-        this.totalAmount=totalAmount;
+        this.customerId = customerId;
+        this.date = date;
+        this.totalAmount = totalAmount;
     }
 
 

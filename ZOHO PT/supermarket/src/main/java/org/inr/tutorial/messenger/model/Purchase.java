@@ -1,9 +1,6 @@
 package org.inr.tutorial.messenger.model;
 
 import org.inr.tutorial.messenger.dao.ItemsDao;
-import org.inr.tutorial.messenger.database.Database;
-
-import java.sql.SQLException;
 
 public class Purchase {
     private int itemId;
@@ -22,52 +19,34 @@ public class Purchase {
         this.amount = amount;
     }
 
-    public Purchase(int itemId, float quantity) {
-        setItemId(itemId);
-        setQuantity(quantity);
-        try {
-            this.amount = itemsDao.getItemById(itemId).getPrice() * quantity;
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-        System.out.println("argumented purchase");
+    public int getItemId() {
+        return itemId;
     }
 
     public float getQuantity() {
         return quantity;
     }
 
-    public int getItemId() {
-        return itemId;
-    }
-
     public void setItemId(int itemId) {
         this.itemId = itemId;
-    }
-
-    public void setQuantity(float quantity) {
-        Item currentItem = null;
-        try {
-            currentItem = itemsDao.getItemById(itemId);
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-        if (currentItem.getQuantity() < quantity) {
-            System.out.println("Out of Stock");
-            this.quantity = 0;
-            return;
-        }
-        currentItem.setQuantity(currentItem.getQuantity() - quantity);
-        this.quantity = quantity;
-        try {
-            amount = itemsDao.getItemById(itemId).getPrice() * quantity;
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
     }
 
     public float getAmount() {
         return amount;
     }
 
+    //Uncaught
+    public void setQuantity(float quantity) throws Exception {
+        Item currentItem = itemsDao.getItemById(itemId);
+        if (currentItem == null) {
+            throw new RuntimeException("Item with ID " + itemId + " not found.");
+        }
+        if (currentItem.getQuantity() < quantity) {
+            throw new RuntimeException("Quantity Exceeds the availability");
+        }
+        currentItem.setQuantity(currentItem.getQuantity() - quantity);
+        this.quantity = quantity;
+        itemsDao.editItem(currentItem.getId(), currentItem);
+        this.amount = currentItem.getPrice() * quantity;
+    }
 }

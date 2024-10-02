@@ -6,7 +6,7 @@ import jakarta.ws.rs.core.Response;
 import org.inr.tutorial.messenger.dao.InvoicesDao;
 import org.inr.tutorial.messenger.model.Invoice;
 
-import java.sql.SQLException;
+//import java.sql.Exception;
 import java.util.List;
 
 @Path("/invoices")
@@ -19,11 +19,16 @@ public class InvoiceResource {
     @GET
     public Response getAllInvoices() {
         try {
-            return Response.ok(invoicesDao.getAllInvoices()).build();
-        } catch (SQLException e) {
-            System.out.println(e);
+            List<Invoice> invoiceList = invoicesDao.getAllInvoices();
+            if (invoiceList == null) {
+                return Response.status(Response.Status.NOT_FOUND)
+                        .entity("No invoice found")
+                        .build();
+            }
+            return Response.ok(invoiceList).build();
+        } catch (Exception e) {
             return Response.status(Response.Status.NO_CONTENT)
-                    .entity("No invoices in Database")
+                    .entity("Error: " + e.toString())
                     .build();
         }
     }
@@ -32,8 +37,14 @@ public class InvoiceResource {
     @Path("/{invoiceId}")
     public Response getInvoiceById(@PathParam("invoiceId") int id) {
         try {
-            return Response.ok(invoicesDao.getInvoiceById(id)).build();
-        } catch (SQLException e) {
+            Invoice invoice = invoicesDao.getInvoiceById(id);
+            if (invoice == null) {
+                return Response.status(Response.Status.NOT_FOUND)
+                        .entity("No Item found with id " + id)
+                        .build();
+            }
+            return Response.ok(invoice).build();
+        } catch (Exception e) {
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
                     .entity("Error: " + e.toString())
                     .build();
@@ -44,7 +55,7 @@ public class InvoiceResource {
     public Response createInvoice(Invoice invoice) {
         try {
             return Response.ok(invoicesDao.addInvoice(invoice)).build();
-        } catch (SQLException e) {
+        } catch (Exception e) {
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
                     .entity("Error: " + e.toString())
                     .build();
@@ -56,7 +67,7 @@ public class InvoiceResource {
     public Response editInvoice(@PathParam("invoiceId") int id, Invoice invoice) {
         try {
             return Response.ok(invoicesDao.editInvoice(id, invoice)).build();
-        } catch (SQLException e) {
+        } catch (Exception e) {
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
                     .entity("Error: " + e.toString())
                     .build();
@@ -68,7 +79,7 @@ public class InvoiceResource {
     public Response deleteInvoice(@PathParam("invoiceId") int id) {
         try {
             return Response.ok(invoicesDao.deleteInvoice(id)).build();
-        } catch (SQLException e) {
+        } catch (Exception e) {
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
                     .entity("Error: " + e.toString())
                     .build();
