@@ -1,6 +1,6 @@
-package org.inr.tutorial.messenger.model;
+package org.inr.supermarket.models;
 
-import org.inr.tutorial.messenger.dao.ItemsDao;
+import org.inr.supermarket.dao.ItemsDao;
 
 public class Purchase {
     private int itemId;

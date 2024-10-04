@@ -1,12 +1,12 @@
-package org.inr.tutorial.messenger.resources;
+package org.inr.supermarket.resources;
 
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
-import org.inr.tutorial.messenger.dao.CustomersDao;
-import org.inr.tutorial.messenger.dao.InvoicesDao;
-import org.inr.tutorial.messenger.model.Customer;
-import org.inr.tutorial.messenger.model.Invoice;
+import org.inr.supermarket.dao.CustomersDao;
+import org.inr.supermarket.dao.InvoicesDao;
+import org.inr.supermarket.models.Customer;
+import org.inr.supermarket.models.Invoice;
 
 import java.util.List;
 
@@ -86,8 +86,8 @@ public class CustomersResource {
         try {
             List<Invoice> customerInvoices = invoicesDao.getAllInvoices(customerId);
             if (customerInvoices.isEmpty()) {
-                return Response.status(Response.Status.NO_CONTENT)
-                        .entity("Customer with id " + customerId + " have no invoices")
+                return Response.status(Response.Status.NOT_FOUND)
+                        .entity("No invoices exist")
                         .build();
             }
             return Response.ok(customerInvoices).build();

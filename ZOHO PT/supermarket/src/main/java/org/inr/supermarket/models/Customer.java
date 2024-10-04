@@ -1,4 +1,4 @@
-package org.inr.tutorial.messenger.model;
+package org.inr.supermarket.models;
 
 public class Customer {
     private int id;

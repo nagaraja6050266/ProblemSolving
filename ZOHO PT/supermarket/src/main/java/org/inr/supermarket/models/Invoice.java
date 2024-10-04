@@ -1,8 +1,8 @@
-package org.inr.tutorial.messenger.model;
+package org.inr.supermarket.models;
 
-import org.inr.tutorial.messenger.database.Database;
-
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 public class Invoice {
     private int id;
@@ -48,6 +48,7 @@ public class Invoice {
     }
 
     public void setPurchases(List<Purchase> purchases) {
+        this.totalAmount = 0;
         for (Purchase purchase : purchases) {
             this.totalAmount += purchase.getAmount();
         }

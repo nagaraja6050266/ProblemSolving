@@ -1,4 +1,4 @@
-package org.inr.tutorial.messenger.database;
+package org.inr.supermarket.database;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

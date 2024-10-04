@@ -1,8 +1,8 @@
-package org.inr.tutorial.messenger.dao;
+package org.inr.supermarket.dao;
 
-import org.inr.tutorial.messenger.database.Database;
-import org.inr.tutorial.messenger.model.Invoice;
-import org.inr.tutorial.messenger.model.Purchase;
+import org.inr.supermarket.database.Database;
+import org.inr.supermarket.models.Purchase;
+import org.inr.supermarket.models.Invoice;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -14,7 +14,7 @@ import java.util.List;
 
 public class InvoicesDao {
 
-    Connection connection = Database.getConnection();
+    private final Connection connection = Database.getConnection();
 
     public Invoice addInvoice(Invoice invoice) throws SQLException {
 
@@ -89,7 +89,7 @@ public class InvoicesDao {
             invoice.setPurchases(createPurchaseList(purchaseRs));
             invoiceList.add(invoice);
         }
-        return invoiceList.isEmpty() ? null : invoiceList;
+        return invoiceList;
     }
 
     public Invoice editInvoice(int id, Invoice invoice) throws SQLException {
@@ -114,7 +114,13 @@ public class InvoicesDao {
     }
 
     public int deleteInvoice(int id) throws SQLException {
-        String query = "delete from invoices where id=?";
+        String invoiceQuery = "delete from invoices where id=?";
+        String purchaseQuery = "delete from purchases where invoiceId=?";
+        deleteById(purchaseQuery,id);
+        return deleteById(invoiceQuery,id);
+    }
+
+    public int deleteById(String query,int id) throws SQLException {
         PreparedStatement statement = connection.prepareStatement(query);
         statement.setInt(1, id);
         return statement.executeUpdate();

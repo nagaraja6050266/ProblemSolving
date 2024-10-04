@@ -1,10 +1,10 @@
-package org.inr.tutorial.messenger.resources;
+package org.inr.supermarket.resources;
 
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
-import org.inr.tutorial.messenger.dao.InvoicesDao;
-import org.inr.tutorial.messenger.model.Invoice;
+import org.inr.supermarket.dao.InvoicesDao;
+import org.inr.supermarket.models.Invoice;
 
 //import java.sql.Exception;
 import java.util.List;
@@ -20,7 +20,7 @@ public class InvoiceResource {
     public Response getAllInvoices() {
         try {
             List<Invoice> invoiceList = invoicesDao.getAllInvoices();
-            if (invoiceList == null) {
+            if (invoiceList.isEmpty()) {
                 return Response.status(Response.Status.NOT_FOUND)
                         .entity("No invoice found")
                         .build();
@@ -78,7 +78,7 @@ public class InvoiceResource {
     @Path("/{invoiceId}")
     public Response deleteInvoice(@PathParam("invoiceId") int id) {
         try {
-            return Response.ok(invoicesDao.deleteInvoice(id)).build();
+            return Response.ok("Deleted "+invoicesDao.deleteInvoice(id)+" invoices").build();
         } catch (Exception e) {
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
                     .entity("Error: " + e.toString())

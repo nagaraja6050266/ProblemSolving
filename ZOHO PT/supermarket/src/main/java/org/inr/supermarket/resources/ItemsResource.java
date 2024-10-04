@@ -1,12 +1,11 @@
-package org.inr.tutorial.messenger.resources;
+package org.inr.supermarket.resources;
 
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
-import org.inr.tutorial.messenger.dao.ItemsDao;
-import org.inr.tutorial.messenger.model.Item;
+import org.inr.supermarket.dao.ItemsDao;
+import org.inr.supermarket.models.Item;
 
-import java.sql.SQLException;
 import java.util.List;
 
 @Path("/items")
@@ -67,7 +66,7 @@ public class ItemsResource {
     @Path("/{itemId}")
     public Response deleteItem(@PathParam("itemId") int id) {
         try {
-            return Response.ok(itemsDao.deleteItem(id) >= 1 ? "Deleted" : "Not Deleted").build();
+            return Response.ok("Deleted " + itemsDao.deleteItem(id) + " items").build();
         } catch (Exception e) {
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
                     .entity("Error: " + e.toString())

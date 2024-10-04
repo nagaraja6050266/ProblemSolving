@@ -1,7 +1,7 @@
-package org.inr.tutorial.messenger.dao;
+package org.inr.supermarket.dao;
 
-import org.inr.tutorial.messenger.database.Database;
-import org.inr.tutorial.messenger.model.Customer;
+import org.inr.supermarket.database.Database;
+import org.inr.supermarket.models.Customer;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -11,7 +11,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CustomersDao {
-    Connection connection = Database.getConnection();
+
+    private final Connection connection = Database.getConnection();
+
     public Customer addCustomer(Customer customer) throws SQLException {
         String query = "insert into customers values(?,?,?)";
         PreparedStatement statement = connection.prepareStatement(query);
@@ -50,7 +52,7 @@ public class CustomersDao {
         statement.setInt(1, customer.getId());
         statement.setString(2, customer.getName());
         statement.setString(3, customer.getPhNumber());
-        statement.setInt(4,id);
+        statement.setInt(4, id);
         System.out.println(statement.toString());
         return statement.executeUpdate();
     }

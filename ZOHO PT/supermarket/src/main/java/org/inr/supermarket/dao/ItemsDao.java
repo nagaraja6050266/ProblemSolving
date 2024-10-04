@@ -1,7 +1,7 @@
-package org.inr.tutorial.messenger.dao;
+package org.inr.supermarket.dao;
 
-import org.inr.tutorial.messenger.database.Database;
-import org.inr.tutorial.messenger.model.Item;
+import org.inr.supermarket.database.Database;
+import org.inr.supermarket.models.Item;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -12,7 +12,7 @@ import java.util.List;
 
 public class ItemsDao {
 
-    Connection connection = Database.getConnection();
+    private final Connection connection = Database.getConnection();
 
     public Item addItem(Item item) throws SQLException {
         String query = "insert into items values(?,?,?,?)";
