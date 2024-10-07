@@ -24,7 +24,6 @@ public class PurchasesDao {
         statement.setFloat(4, purchase.getAmount());
         statement.setInt(5, purchase.getPurchaseId());
         statement.executeUpdate();
-
         return purchase;
     }
 

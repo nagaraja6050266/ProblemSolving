@@ -47,7 +47,12 @@ public class InvoicesDao {
         invoiceStmt.executeUpdate();
 
         for (Purchase purchase : currPurchases) {
-            purchasesDao.addPurchase(purchase);
+            try {
+                purchasesDao.addPurchase(purchase);
+            } catch (SQLException e) {
+                System.out.println(e.toString());
+                deleteInvoice(invoice.getId());
+            }
         }
         return invoice;
     }
@@ -106,7 +111,6 @@ public class InvoicesDao {
         invoiceStmt.setInt(5, id);
         invoiceStmt.executeUpdate();
 
-
         return getInvoiceById(id);
     }
 
@@ -129,9 +133,11 @@ public class InvoicesDao {
             } else {
                 purchasesDao.addPurchase(purchase);
             }
-            purchaseIdList.remove(currPurchaseId);
+            purchaseIdList.remove(Integer.valueOf(currPurchaseId));
             totalAmount += purchase.getAmount();
         }
+
+        System.out.println(purchaseIdList.toString());
 
         for (int remainingPurchaseId : purchaseIdList) {
             purchasesDao.deletePurchase(id, remainingPurchaseId);
