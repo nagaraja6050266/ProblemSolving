@@ -53,7 +53,6 @@ public class CustomersDao {
         statement.setString(2, customer.getName());
         statement.setString(3, customer.getPhNumber());
         statement.setInt(4, id);
-        System.out.println(statement.toString());
         return statement.executeUpdate();
     }
 

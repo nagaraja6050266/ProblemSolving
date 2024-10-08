@@ -3,8 +3,10 @@ package org.inr.supermarket.resources;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
+import org.inr.supermarket.dao.DaoDistributor;
 import org.inr.supermarket.dao.InvoicesDao;
 import org.inr.supermarket.models.Invoice;
+import org.inr.supermarket.models.Payment;
 
 //import java.sql.Exception;
 import java.util.List;
@@ -14,7 +16,7 @@ import java.util.List;
 @Consumes(MediaType.APPLICATION_JSON)
 public class InvoiceResource {
 
-    InvoicesDao invoicesDao = new InvoicesDao();
+    InvoicesDao invoicesDao = DaoDistributor.getInvoicesDao();
 
     @GET
     public Response getAllInvoices() {
@@ -78,7 +80,7 @@ public class InvoiceResource {
     @Path("/{invoiceId}")
     public Response deleteInvoice(@PathParam("invoiceId") int id) {
         try {
-            return Response.ok("Deleted "+invoicesDao.deleteInvoice(id)+" invoices").build();
+            return Response.ok("Deleted " + invoicesDao.deleteInvoice(id) + " invoices").build();
         } catch (Exception e) {
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
                     .entity("Error: " + e.toString())
@@ -86,5 +88,16 @@ public class InvoiceResource {
         }
     }
 
+    @POST
+    @Path("/{invoiceId}/payment")
+    public Response recordPayment(@PathParam("invoiceId") int id, Payment payment) {
+        try {
+            return Response.ok(invoicesDao.recordPayment(id, payment)).build();
+        } catch (Exception e) {
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
+                    .entity("Error: " + e.toString())
+                    .build();
+        }
+    }
 }
 

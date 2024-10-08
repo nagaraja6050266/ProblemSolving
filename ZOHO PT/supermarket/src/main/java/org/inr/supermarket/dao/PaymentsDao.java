@@ -1,6 +1,9 @@
 package org.inr.supermarket.dao;
 
 import org.inr.supermarket.database.Database;
+import org.inr.supermarket.models.Invoice;
+import org.inr.supermarket.models.InvoiceStatus;
+import org.inr.supermarket.models.Item;
 import org.inr.supermarket.models.Payment;
 
 import java.sql.Connection;
@@ -15,16 +18,16 @@ public class PaymentsDao {
 
     private final Connection connection = Database.getConnection();
 
-    public Payment addPayment(Payment payment) throws SQLException {
+    public int addPayment(Payment payment) throws SQLException {
+        payment.setDate(new Date());
         String query = "insert into payments values(?,?,?)";
         PreparedStatement statement = connection.prepareStatement(query);
         statement.setInt(1, payment.getInvoiceId());
-        payment.setDate(new Date());
         statement.setDate(2, new java.sql.Date(payment.getDate().getTime()));
         statement.setFloat(3, payment.getAmount());
-        statement.executeUpdate();
-        return payment;
+        return statement.executeUpdate();
     }
+
 
     public Payment getPaymentById(int id) throws SQLException {
         String query = "select * from payments where invoiceId=?";

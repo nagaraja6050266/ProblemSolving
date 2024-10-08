@@ -1,7 +1,5 @@
 package org.inr.supermarket.models;
 
-import org.inr.supermarket.dao.ItemsDao;
-
 public class Purchase {
 
     private int invoiceId;
@@ -10,10 +8,7 @@ public class Purchase {
     private float amount;
     private int purchaseId;
 
-    ItemsDao itemsDao = new ItemsDao();
-
     public Purchase() {
-        System.out.println("argument less purchase");
     }
 
     public void Purchase(int itemId, float quantity, float amount) {

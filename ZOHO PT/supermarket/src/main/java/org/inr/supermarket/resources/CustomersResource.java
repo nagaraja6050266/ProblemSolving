@@ -4,6 +4,7 @@ import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import org.inr.supermarket.dao.CustomersDao;
+import org.inr.supermarket.dao.DaoDistributor;
 import org.inr.supermarket.dao.InvoicesDao;
 import org.inr.supermarket.models.Customer;
 import org.inr.supermarket.models.Invoice;
@@ -15,8 +16,8 @@ import java.util.List;
 @Consumes(MediaType.APPLICATION_JSON)
 public class CustomersResource {
 
-    CustomersDao customersDao = new CustomersDao();
-    InvoicesDao invoicesDao = new InvoicesDao();
+    CustomersDao customersDao = DaoDistributor.getCustomersDao();
+    InvoicesDao invoicesDao = DaoDistributor.getInvoicesDao();
 
     @GET
     public Response getAllCustomers() {
@@ -24,7 +25,6 @@ public class CustomersResource {
             List<Customer> customers = customersDao.getAllCustomers();
             return Response.ok(customers).build();
         } catch (Exception e) {
-            System.out.println(e.toString());
             return Response.status(Response.Status.NO_CONTENT)
                     .entity("Error: " + e.toString())
                     .build();
@@ -38,7 +38,6 @@ public class CustomersResource {
             Customer customer = customersDao.getCustomerById(id);
             return Response.ok(customer).build();
         } catch (Exception e) {
-            System.out.println(e.toString());
             return Response.status(Response.Status.NOT_FOUND)
                     .entity("Error " + e.toString())
                     .build();

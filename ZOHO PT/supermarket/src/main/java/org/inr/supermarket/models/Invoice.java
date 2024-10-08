@@ -10,6 +10,7 @@ public class Invoice {
     private List<Purchase> purchases = new ArrayList<>();
     private Date date;
     private float totalAmount = 0;
+    private InvoiceStatus invoiceStatus;
 
     public int getId() {
         return id;
@@ -55,16 +56,24 @@ public class Invoice {
         this.purchases = purchases;
     }
 
+    public InvoiceStatus getInvoiceStatus() {
+        return invoiceStatus;
+    }
+
+    public void setInvoiceStatus(InvoiceStatus invoiceStatus) {
+        this.invoiceStatus = invoiceStatus;
+    }
+
     public Invoice() {
-        System.out.println("no argumented");
         this.date = new Date();
     }
 
-    public Invoice(int id, int customerId, Date date, float totalAmount) {
+    public Invoice(int id, int customerId, Date date, float totalAmount,InvoiceStatus invoiceStatus) {
         this.id = id;
         this.customerId = customerId;
         this.date = date;
         this.totalAmount = totalAmount;
+        this.invoiceStatus=invoiceStatus;
     }
 
 

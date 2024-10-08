@@ -2,6 +2,7 @@ package org.inr.supermarket.dao;
 
 import org.inr.supermarket.database.Database;
 import org.inr.supermarket.models.Item;
+import org.inr.supermarket.models.Payment;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

@@ -3,6 +3,8 @@ package org.inr.supermarket.resources;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
+import org.inr.supermarket.dao.DaoDistributor;
+import org.inr.supermarket.dao.InvoicesDao;
 import org.inr.supermarket.models.Payment;
 import org.inr.supermarket.dao.PaymentsDao;
 
@@ -13,7 +15,8 @@ import java.util.List;
 @Consumes(MediaType.APPLICATION_JSON)
 public class PaymentsResource {
 
-    PaymentsDao paymentsDao = new PaymentsDao();
+    PaymentsDao paymentsDao = DaoDistributor.getPaymentsDao();
+    InvoicesDao invoicesDao = DaoDistributor.getInvoicesDao();
 
     @GET
     public Response getAllPayments() {
@@ -42,7 +45,7 @@ public class PaymentsResource {
     @POST
     public Response createPayment(Payment payment) {
         try {
-            return Response.ok(paymentsDao.addPayment(payment)).build();
+            return Response.ok(invoicesDao.recordPayment(payment.getInvoiceId(),payment)).build();
         } catch (Exception e) {
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
                     .entity("Error: " + e.toString())
@@ -66,7 +69,7 @@ public class PaymentsResource {
     @Path("/{paymentId}")
     public Response deletePayment(@PathParam("paymentId") int id) {
         try {
-            return Response.ok(paymentsDao.deletePayment(id) >= 1 ? "Deleted" : "Not Deleted").build();
+            return Response.ok( "{\"message\":\"Deleted " +paymentsDao.deletePayment(id)+" payment\"").build();
         } catch (Exception e) {
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
                     .entity("Error: " + e.toString())

@@ -1,9 +1,7 @@
 package org.inr.supermarket.dao;
 
 import org.inr.supermarket.database.Database;
-import org.inr.supermarket.models.Item;
-import org.inr.supermarket.models.Purchase;
-import org.inr.supermarket.models.Invoice;
+import org.inr.supermarket.models.*;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -15,15 +13,17 @@ import java.util.List;
 
 public class InvoicesDao {
 
-    private ItemsDao itemsDao = new ItemsDao();
     private final Connection connection = Database.getConnection();
-    private PurchasesDao purchasesDao = new PurchasesDao();
+    private ItemsDao itemsDao = DaoDistributor.getItemsDao();
+    private PurchasesDao purchasesDao = DaoDistributor.getPurchasesDao();
+    private PaymentsDao paymentsDao = DaoDistributor.getPaymentsDao();
 
     public Invoice addInvoice(Invoice invoice) throws SQLException, RuntimeException {
 
         invoice.setDate(new Date());
+        invoice.setInvoiceStatus(InvoiceStatus.OPEN);
 
-        String invoiceQuery = "insert into invoices values(?,?,?,?)";
+        String invoiceQuery = "insert into invoices values(?,?,?,?,?)";
 
         PreparedStatement invoiceStmt = connection.prepareStatement(invoiceQuery);
         invoiceStmt.setInt(1, invoice.getId());
@@ -44,13 +44,13 @@ public class InvoicesDao {
         }
         invoice.setPurchases(currPurchases);
         invoiceStmt.setFloat(4, invoice.getTotalAmount());
+        invoiceStmt.setString(5, String.valueOf(invoice.getInvoiceStatus()));
         invoiceStmt.executeUpdate();
 
         for (Purchase purchase : currPurchases) {
             try {
                 purchasesDao.addPurchase(purchase);
             } catch (SQLException e) {
-                System.out.println(e.toString());
                 deleteInvoice(invoice.getId());
             }
         }
@@ -114,11 +114,29 @@ public class InvoicesDao {
         return getInvoiceById(id);
     }
 
+    public void updatePaymentStatus(int id, InvoiceStatus invoiceStatus) throws SQLException {
+        String query = "update invoices set invoiceStatus=? where id=?";
+        PreparedStatement stmt = connection.prepareStatement(query);
+        stmt.setString(1, String.valueOf(invoiceStatus));
+        stmt.setInt(2, id);
+        stmt.executeUpdate();
+    }
+
     public int deleteInvoice(int id) throws SQLException {
         String query = "delete from invoices where id=?";
         PreparedStatement statement = connection.prepareStatement(query);
         statement.setInt(1, id);
         return statement.executeUpdate();
+    }
+
+    public Invoice recordPayment(int id, Payment payment) throws SQLException {
+        payment.setInvoiceId(id);
+        if (paymentsDao.addPayment(payment) == 1) {
+            updateInvoiceStatus(payment);
+            Invoice currInvoice = getInvoiceById(id);
+            return currInvoice;
+        }
+        return null;
     }
 
     private float editPurchases(int id, List<Purchase> purchases) throws SQLException {
@@ -137,8 +155,6 @@ public class InvoicesDao {
             totalAmount += purchase.getAmount();
         }
 
-        System.out.println(purchaseIdList.toString());
-
         for (int remainingPurchaseId : purchaseIdList) {
             purchasesDao.deletePurchase(id, remainingPurchaseId);
         }
@@ -148,7 +164,7 @@ public class InvoicesDao {
 
 
     private Invoice createInvoice(ResultSet resultSet) throws SQLException {
-        return new Invoice(resultSet.getInt("id"), resultSet.getInt("customerId"), resultSet.getDate("date"), resultSet.getFloat("totalAmount"));
+        return new Invoice(resultSet.getInt("id"), resultSet.getInt("customerId"), resultSet.getDate("date"), resultSet.getFloat("totalAmount"), InvoiceStatus.valueOf(resultSet.getString("invoiceStatus")));
     }
 
     private float calculatePurchaseAmount(Purchase purchase, Item currentItem) throws SQLException {
@@ -165,5 +181,18 @@ public class InvoicesDao {
         }
         currentItem.setQuantity(currentItem.getQuantity() - quantity);
         itemsDao.editItem(currentItem.getId(), currentItem);
+    }
+
+    private void updateInvoiceStatus(Payment payment) throws SQLException {
+        Invoice currInvoice=getInvoiceById(payment.getInvoiceId());
+        InvoiceStatus invoiceStatus;
+        if(payment.getAmount()<currInvoice.getTotalAmount()){
+            invoiceStatus=InvoiceStatus.PARTIALLY_PAID;
+        } else if(payment.getAmount()>currInvoice.getTotalAmount()) {
+            invoiceStatus=InvoiceStatus.PAID_EXCESS_AMOUNT;
+        } else {
+            invoiceStatus=InvoiceStatus.PAID;
+        }
+        updatePaymentStatus(payment.getInvoiceId(), invoiceStatus);
     }
 }

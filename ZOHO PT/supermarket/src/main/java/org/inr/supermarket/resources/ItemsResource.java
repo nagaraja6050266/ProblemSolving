@@ -3,6 +3,7 @@ package org.inr.supermarket.resources;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
+import org.inr.supermarket.dao.DaoDistributor;
 import org.inr.supermarket.dao.ItemsDao;
 import org.inr.supermarket.models.Item;
 
@@ -13,7 +14,7 @@ import java.util.List;
 @Consumes(MediaType.APPLICATION_JSON)
 public class ItemsResource {
 
-    ItemsDao itemsDao = new ItemsDao();
+    ItemsDao itemsDao = DaoDistributor.getItemsDao();
 
     @GET
     public Response getAllItems() {

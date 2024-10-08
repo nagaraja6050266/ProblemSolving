@@ -12,7 +12,7 @@ import java.util.List;
 
 public class PurchasesDao {
 
-    ItemsDao itemsDao = new ItemsDao();
+//    ItemsDao itemsDao = new ItemsDao();
     private final Connection connection = Database.getConnection();
 
     public Purchase addPurchase(Purchase purchase) throws SQLException {

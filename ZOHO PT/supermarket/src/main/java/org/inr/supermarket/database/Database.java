@@ -9,9 +9,9 @@ public class Database {
     private static final String URL = "jdbc:mysql://localhost:3306/supermarket";
     private static final String USER = "root";
     private static final String PASSWORD = "";
+    private static Connection connection=createConnection();
 
-
-    public static Connection getConnection(){
+    public static Connection createConnection(){
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection connection = DriverManager.getConnection(URL, USER, PASSWORD);
@@ -24,5 +24,9 @@ public class Database {
             System.out.println("Connection Error");
             throw new RuntimeException(e);
         }
+    }
+
+    public static Connection getConnection() {
+        return connection;
     }
 }
