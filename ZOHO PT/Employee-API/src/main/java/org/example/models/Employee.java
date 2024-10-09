@@ -1,4 +1,4 @@
-package org.example;
+package org.example.models;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -25,10 +25,10 @@ public class Employee {
         return age;
     }
 
-    Employee() {
+    public Employee() {
     }
 
-    Employee(int id, String name, int age, String position) {
+    public Employee(int id, String name, int age, String position) {
         this.id = id;
         this.name = name;
         this.age = age;
@@ -38,6 +38,11 @@ public class Employee {
     @Override
     public String toString() {
         return "\nEmployee Name: " + name + "\nID: " + id + "\nAge: " + age + "\nPosition: " + position;
+    }
+
+    public String toJson() throws JsonProcessingException {
+        ObjectMapper objectMapper=new ObjectMapper();
+        return objectMapper.writeValueAsString(this);
     }
 
 }

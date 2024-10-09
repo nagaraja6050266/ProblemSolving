@@ -1,4 +1,7 @@
-package org.example;//import javax.servlet.http.HttpServletRequest;
+package org.example.dao;//import javax.servlet.http.HttpServletRequest;
+
+import org.example.DatabaseConnection;
+import org.example.models.Employee;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -9,20 +12,22 @@ import java.util.List;
 
 public class EmployeeDao {
 
-    public void addEmployee(int id, String name, int age, String position) throws SQLException {
+    public Employee addEmployee(Employee employee) throws SQLException {
         Connection connection = DatabaseConnection.getConnection();
-        String query = "insert into employee (id,name,age,position) values (?,?,?,?)";
+        String query = "insert into employees (name,age,position) values (?,?,?)";
         PreparedStatement statement = connection.prepareStatement(query);
-        statement.setInt(1, id);
-        statement.setString(2, name);
-        statement.setInt(3, age);
-        statement.setString(4, position);
-        statement.executeUpdate();
+        statement.setString(1, employee.getName());
+        statement.setInt(2, employee.getAge());
+        statement.setString(3, employee.getPosition());
+        if(statement.executeUpdate()==0){
+            return null;
+        }
+        return employee;
     }
 
     public Employee getEmployee(int id) throws SQLException {
         Connection connection = DatabaseConnection.getConnection();
-        String query = "select * from employee where id=?";
+        String query = "select * from employees where id=?";
         PreparedStatement statement = connection.prepareStatement(query);
         statement.setInt(1, id);
         ResultSet result = statement.executeQuery();
@@ -33,21 +38,20 @@ public class EmployeeDao {
         }
     }
 
-    public void updateEmployee(int idToFind, int idToChange, String name, int age, String position) throws SQLException {
+    public void updateEmployee(int id, Employee employee) throws SQLException {
         Connection connection = DatabaseConnection.getConnection();
-        String query = "update employee set name=?,age=?,position=?, id=? where id=?";
+        String query = "update employees set name=?,age=?,position=? where id=?";
         PreparedStatement statement = connection.prepareStatement(query);
-        statement.setString(1, name);
-        statement.setInt(2, age);
-        statement.setString(3, position);
-        statement.setInt(4, idToChange);
-        statement.setInt(5,idToFind);
+        statement.setString(1, employee.getName());
+        statement.setInt(2, employee.getAge());
+        statement.setString(3, employee.getPosition());
+        statement.setInt(4, id);
         statement.executeUpdate();
     }
 
     public int deleteEmployee(int id) throws SQLException {
         Connection connection = DatabaseConnection.getConnection();
-        String query = "delete from employee where id=?";
+        String query = "delete from employees where id=?";
         PreparedStatement statement = connection.prepareStatement(query);
         statement.setInt(1, id);
         return statement.executeUpdate();
@@ -55,7 +59,7 @@ public class EmployeeDao {
 
     public List<Employee> getAllEmployee() throws SQLException {
         Connection connection = DatabaseConnection.getConnection();
-        String query = "select * from employee";
+        String query = "select * from employees";
         PreparedStatement statement = connection.prepareStatement(query);
         ResultSet result = statement.executeQuery();
         List<Employee> employees = new ArrayList<>();
