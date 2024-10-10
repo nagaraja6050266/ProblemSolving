@@ -4,7 +4,17 @@ public class Warehouse {
     private int warehouseId;
     private String name;
     private String location;
-    private float totalCapacity;
+    private int capacity;
+
+    public Warehouse(int warehouseId, String name, String location, int capacity) {
+        this.warehouseId = warehouseId;
+        this.name = name;
+        this.location = location;
+        this.capacity = capacity;
+    }
+
+    public Warehouse() {
+    }
 
     public int getWarehouseId() {
         return warehouseId;
@@ -30,11 +40,11 @@ public class Warehouse {
         this.location = location;
     }
 
-    public float getTotalCapacity() {
-        return totalCapacity;
+    public int getCapacity() {
+        return capacity;
     }
 
-    public void setTotalCapacity(float totalCapacity) {
-        this.totalCapacity = totalCapacity;
+    public void setCapacity(int capacity) {
+        this.capacity = capacity;
     }
 }

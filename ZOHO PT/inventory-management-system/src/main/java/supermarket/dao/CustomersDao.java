@@ -17,17 +17,16 @@ public class CustomersDao {
     public Customer addCustomer(Customer customer) throws SQLException {
         String query = "insert into customers values(?,?,?)";
         PreparedStatement statement = connection.prepareStatement(query);
-        statement.setInt(1, customer.getCustomerId());
-        statement.setString(2, customer.getName());
-        statement.setString(3, customer.getPhNumber());
+        statement.setString(1, customer.getName());
+        statement.setString(2, customer.getPhNumber());
         statement.executeUpdate();
         return customer;
     }
 
-    public Customer getCustomerById(int id) throws SQLException {
-        String query = "select * from customers where id=?";
+    public Customer getCustomerById(int customerId) throws SQLException {
+        String query = "select * from customers where customerId=?";
         PreparedStatement statement = connection.prepareStatement(query);
-        statement.setInt(1, id);
+        statement.setInt(1, customerId);
         ResultSet resultSet = statement.executeQuery();
         if (resultSet.next()) {
             return createCustomer(resultSet);
@@ -47,7 +46,7 @@ public class CustomersDao {
     }
 
     public int editCustomer(int id, Customer customer) throws SQLException {
-        String query = "update customers set id=?,name=?,phNumber=? where id=?";
+        String query = "update customers set name=?,phNumber=? where customerId=?";
         PreparedStatement statement = connection.prepareStatement(query);
         statement.setInt(1, customer.getCustomerId());
         statement.setString(2, customer.getName());
@@ -57,7 +56,7 @@ public class CustomersDao {
     }
 
     public int deleteCustomer(int id) throws SQLException {
-        String query = "delete from customers where id=?";
+        String query = "delete from customers where customerId=?";
         PreparedStatement statement = connection.prepareStatement(query);
         statement.setInt(1, id);
         return statement.executeUpdate();

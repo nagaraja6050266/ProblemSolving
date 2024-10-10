@@ -4,24 +4,24 @@ import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import supermarket.dao.DaoDistributor;
-import supermarket.dao.ItemsDao;
-import supermarket.models.Item;
+import supermarket.dao.WarehousesDao;
+import supermarket.models.Warehouse;
 import supermarket.publicUtilities.Utilities;
 
 import java.util.List;
 
-@Path("/items")
+@Path("/warehouses")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
-public class ItemsResource {
+public class WarehousesResource {
 
-    ItemsDao itemsDao = DaoDistributor.getItemsDao();
+    WarehousesDao warehousesDao = DaoDistributor.getWarehousesDao();
 
     @GET
-    public Response getAllItems() {
+    public Response getAllWarehouses() {
         try {
-            List<Item> items = itemsDao.getAllItems();
-            return Response.ok(items).build();
+            List<Warehouse> warehouses = warehousesDao.getAllWarehouses();
+            return Response.ok(warehouses).build();
         } catch (Exception e) {
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
                     .entity(Utilities.jsonMessage("Error: " + e.toString()))
@@ -31,9 +31,9 @@ public class ItemsResource {
 
     @GET
     @Path("/{itemId}")
-    public Response getItemById(@PathParam("itemId") int id) {
+    public Response getWarehouseById(@PathParam("itemId") int id) {
         try {
-            return Response.ok(itemsDao.getItemById(id)).build();
+            return Response.ok(warehousesDao.getWarehouseById(id)).build();
         } catch (Exception e) {
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
                     .entity(Utilities.jsonMessage("Error: " + e.toString()))
@@ -42,9 +42,9 @@ public class ItemsResource {
     }
 
     @POST
-    public Response createItem(Item item) {
+    public Response createWarehouse(Warehouse warehouse) {
         try {
-            return Response.ok(itemsDao.addItem(item)).build();
+            return Response.ok(warehousesDao.addWarehouse(warehouse)).build();
         } catch (Exception e) {
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
                     .entity(Utilities.jsonMessage("Error: " + e.toString()))
@@ -54,9 +54,9 @@ public class ItemsResource {
 
     @PUT
     @Path("/{itemId}")
-    public Response editItem(@PathParam("itemId") int id, Item item) {
+    public Response editWarehouse(@PathParam("itemId") int id, Warehouse warehouse) {
         try {
-            return Response.ok(itemsDao.editItem(id, item) == 1 ? item : Utilities.jsonMessage("Nothing Edited")).build();
+            return Response.ok(warehousesDao.editWarehouse(id, warehouse) == 1 ? warehouse : Utilities.jsonMessage("Nothing Edited")).build();
         } catch (Exception e) {
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
                     .entity(Utilities.jsonMessage("Error: " + e.toString()))
@@ -66,9 +66,9 @@ public class ItemsResource {
 
     @DELETE
     @Path("/{itemId}")
-    public Response deleteItem(@PathParam("itemId") int id) {
+    public Response deleteWarehouse(@PathParam("itemId") int id) {
         try {
-            return Response.ok(Utilities.jsonMessage("Deleted " + itemsDao.deleteItem(id) + " items")).build();
+            return Response.ok(Utilities.jsonMessage("Deleted " + warehousesDao.deleteWarehouse(id) + " warehouses")).build();
         } catch (Exception e) {
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
                     .entity(Utilities.jsonMessage("Error: " + e.toString()))

@@ -6,6 +6,7 @@ import jakarta.ws.rs.core.Response;
 import supermarket.dao.CustomersDao;
 import supermarket.dao.DaoDistributor;
 import supermarket.models.Customer;
+import supermarket.publicUtilities.Utilities;
 
 import java.util.List;
 
@@ -23,7 +24,7 @@ public class CustomersResource {
             return Response.ok(customers).build();
         } catch (Exception e) {
             return Response.status(Response.Status.NO_CONTENT)
-                    .entity("Error: " + e.toString())
+                    .entity(Utilities.jsonMessage("Error: " + e.toString()))
                     .build();
         }
     }
@@ -59,7 +60,7 @@ public class CustomersResource {
             return Response.ok(customersDao.editCustomer(id, customer) >= 1 ? customer : "Nothing Edited").build();
         } catch (Exception e) {
             return Response.status(Response.Status.NOT_FOUND)
-                    .entity("Error: " + e.toString())
+                    .entity(Utilities.jsonMessage("Error: " + e.toString()))
                     .build();
         }
     }
@@ -71,7 +72,7 @@ public class CustomersResource {
             return Response.ok(customersDao.deleteCustomer(id)).build();
         } catch (Exception e) {
             return Response.status(Response.Status.NOT_FOUND)
-                    .entity("Error: " + e.toString())
+                    .entity(Utilities.jsonMessage("Error: " + e.toString()))
                     .build();
         }
     }
