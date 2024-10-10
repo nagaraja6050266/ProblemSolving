@@ -75,40 +75,4 @@ public class Invoice {
         this.totalAmount = totalAmount;
         this.invoiceStatus=invoiceStatus;
     }
-
-
-//    public void addItemToInvoice(int itemId, float quantity) {
-//        if (purchases.containsKey(itemId)) {
-//            Purchase currentPurchase=purchases.get(itemId);
-//            currentPurchase.setQuantity(currentPurchase.getQuantity()+quantity);
-//        } else {
-//            purchases.put(itemId, new Purchase(itemId,quantity));
-//        }
-//    }
-//
-//    public void removeItemFromInvoice(int itemId, float quantity) {
-//        if (purchases.containsKey(itemId)) {
-//            Purchase existingPurchase = purchases.get(itemId);
-//            if (existingPurchase.getQuantity() < quantity) {
-//                purchases.remove(itemId);
-//            } else {
-//                existingPurchase.setQuantity(existingPurchase.getQuantity()-quantity);
-//            }
-//        } else {
-//            System.out.println("No need to remove its already not there");
-//        }
-//    }
-
-//    public String purchaseDetails() {
-//        String purchaseDetails = "";
-//        for (Map.Entry<Integer, Purchase> purchase : purchases.entrySet()) {
-//            purchaseDetails += "\nItem: " + Database.getItems().get(purchase.getKey()).getName() + "\nQuantity: " + purchase.getValue();
-//        }
-//        return purchaseDetails;
-//    }
-//
-//    @Override
-//    public String toString() {
-//        return "\n\tInvoice\nInvoice ID: " + id + "\nCustomer Name: " + Database.getCustomers().get(customerId).getName() + "\nPurchase Date: " + date + "\n" + purchaseDetails();
-//    }
 }

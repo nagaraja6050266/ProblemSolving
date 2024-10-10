@@ -14,7 +14,6 @@ public class Customer {
         this.phNumber = phNumber;
     }
 
-
     public int getId() {
         return id;
     }
