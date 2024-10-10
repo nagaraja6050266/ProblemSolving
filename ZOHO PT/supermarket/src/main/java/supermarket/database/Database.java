@@ -1,4 +1,4 @@
-package org.inr.supermarket.database;
+package supermarket.database;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

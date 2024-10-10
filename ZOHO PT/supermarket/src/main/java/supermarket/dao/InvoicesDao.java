@@ -1,7 +1,7 @@
-package org.inr.supermarket.dao;
+package supermarket.dao;
 
-import org.inr.supermarket.database.Database;
-import org.inr.supermarket.models.*;
+import supermarket.database.Database;
+import supermarket.models.*;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

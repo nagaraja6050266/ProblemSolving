@@ -1,10 +1,7 @@
-package org.inr.supermarket.dao;
+package supermarket.dao;
 
-import org.inr.supermarket.database.Database;
-import org.inr.supermarket.models.Invoice;
-import org.inr.supermarket.models.InvoiceStatus;
-import org.inr.supermarket.models.Item;
-import org.inr.supermarket.models.Payment;
+import supermarket.database.Database;
+import supermarket.models.Payment;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

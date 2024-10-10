@@ -10,4 +10,13 @@
         <url-pattern>/employees/*</url-pattern>
     </servlet-mapping>
 
+    <filter>
+        <filter-name>JsonContentType</filter-name>
+        <filter-class>org.example.filters.JsonContentType</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>JsonContentType</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
 </web-app>

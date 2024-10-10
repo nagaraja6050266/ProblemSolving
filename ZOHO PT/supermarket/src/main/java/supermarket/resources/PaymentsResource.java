@@ -1,12 +1,12 @@
-package org.inr.supermarket.resources;
+package supermarket.resources;
 
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
-import org.inr.supermarket.dao.DaoDistributor;
-import org.inr.supermarket.dao.InvoicesDao;
-import org.inr.supermarket.models.Payment;
-import org.inr.supermarket.dao.PaymentsDao;
+import supermarket.dao.DaoDistributor;
+import supermarket.dao.InvoicesDao;
+import supermarket.models.Payment;
+import supermarket.dao.PaymentsDao;
 
 import java.util.List;
 

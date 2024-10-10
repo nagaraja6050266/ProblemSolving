@@ -1,4 +1,4 @@
-package org.inr.supermarket.dao;
+package supermarket.dao;
 
 public class DaoDistributor {
     private static CustomersDao customersDao;

@@ -1,4 +1,4 @@
-package org.inr.supermarket.models;
+package supermarket.models;
 
 import java.util.Date;
 

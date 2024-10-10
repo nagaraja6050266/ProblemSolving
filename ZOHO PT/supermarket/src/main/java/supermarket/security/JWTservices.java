@@ -1,4 +1,4 @@
-package org.example.security;
+package supermarket.security;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.JWTVerifier;
@@ -9,7 +9,7 @@ import java.util.Date;
 
 public class JWTservices {
 
-    private static final String secretCode = "mysecretcode";
+    private static final String secretCode = "mysecretcode123456789";
 
     public static String generateToken(String user) {
         return JWT.create()

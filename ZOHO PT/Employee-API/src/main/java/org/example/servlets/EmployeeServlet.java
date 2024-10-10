@@ -12,7 +12,6 @@ import org.example.models.Employee;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class EmployeeServlet extends HttpServlet {
@@ -21,7 +20,6 @@ public class EmployeeServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        response.setContentType("application/json");
         try {
             int id = getIdFromReq(request.getRequestURI(), 2);
             if (id == -1) {
@@ -56,7 +54,6 @@ public class EmployeeServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        response.setContentType("application/json");
         try {
             Employee employee = reqBodyToEmployeeObj(request);
             response.getWriter().write(employeeDao.addEmployee(employee).toJson());
@@ -67,7 +64,6 @@ public class EmployeeServlet extends HttpServlet {
 
     @Override
     protected void doPut(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        response.setContentType("application/json");
         try {
             int id = getIdFromReq(request.getRequestURI(), 2);
             Employee employee = reqBodyToEmployeeObj(request);
