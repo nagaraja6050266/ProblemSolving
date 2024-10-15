@@ -23,7 +23,7 @@ public class CustomersDao {
         return customer;
     }
 
-    public Customer getCustomerById(int customerId) throws SQLException {
+    public Customer getCustomerById(int customerId) throws Exception {
         String query = "select * from customers where customerId=?";
         PreparedStatement statement = connection.prepareStatement(query);
         statement.setInt(1, customerId);
@@ -31,16 +31,19 @@ public class CustomersDao {
         if (resultSet.next()) {
             return createCustomer(resultSet);
         }
-        return null;
+        throw new Exception("No customer Found");
     }
 
-    public List<Customer> getAllCustomers() throws SQLException {
+    public List<Customer> getAllCustomers() throws Exception {
         String query = "select * from customers";
         PreparedStatement statement = connection.prepareStatement(query);
         ResultSet resultSet = statement.executeQuery();
         List<Customer> customers = new ArrayList<>();
         while (resultSet.next()) {
             customers.add(createCustomer(resultSet));
+        }
+        if(customers.isEmpty()){
+            throw new Exception("No customers found");
         }
         return customers;
     }

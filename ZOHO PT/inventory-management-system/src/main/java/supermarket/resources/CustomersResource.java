@@ -37,7 +37,7 @@ public class CustomersResource {
             return Response.ok(customer).build();
         } catch (Exception e) {
             return Response.status(Response.Status.NOT_FOUND)
-                    .entity("Error " + e.toString())
+                    .entity(Utilities.jsonMessage(e.toString()))
                     .build();
         }
     }
@@ -57,7 +57,7 @@ public class CustomersResource {
     @Path("/{customerId}")
     public Response editCustomer(@PathParam("customerId") int id, Customer customer) {
         try {
-            return Response.ok(customersDao.editCustomer(id, customer) >= 1 ? customer : "Nothing Edited").build();
+            return Response.ok(customersDao.editCustomer(id, customer) >= 1 ? customer : Utilities.jsonMessage("Nothing Edited")).build();
         } catch (Exception e) {
             return Response.status(Response.Status.NOT_FOUND)
                     .entity(Utilities.jsonMessage("Error: " + e.toString()))

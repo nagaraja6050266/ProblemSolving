@@ -126,3 +126,10 @@
 0:0:0:0:0:0:0:1 - - [15/Oct/2024:16:31:10 +0530] "POST /ims/api/customers HTTP/1.1" 200 63
 0:0:0:0:0:0:0:1 - - [15/Oct/2024:16:31:21 +0530] "GET /ims/api/customers HTTP/1.1" 200 193
 0:0:0:0:0:0:0:1 - - [15/Oct/2024:16:31:27 +0530] "DELETE /ims/api/customers/1 HTTP/1.1" 200 1
+0:0:0:0:0:0:0:1 - - [15/Oct/2024:16:41:04 +0530] "GET /ims/api/warehouses/1/batches HTTP/1.1" 200 177
+0:0:0:0:0:0:0:1 - - [15/Oct/2024:16:45:41 +0530] "GET /ims/api/customers/1 HTTP/1.1" 200 -
+0:0:0:0:0:0:0:1 - - [15/Oct/2024:16:45:47 +0530] "GET /ims/api/customers HTTP/1.1" 200 193
+0:0:0:0:0:0:0:1 - - [15/Oct/2024:16:48:38 +0530] "GET /ims/api/customers/1 HTTP/1.1" 200 -
+0:0:0:0:0:0:0:1 - - [15/Oct/2024:16:48:39 +0530] "GET /ims/api/customers/1 HTTP/1.1" 200 -
+0:0:0:0:0:0:0:1 - - [15/Oct/2024:16:48:39 +0530] "GET /ims/api/customers/1 HTTP/1.1" 200 -
+0:0:0:0:0:0:0:1 - - [15/Oct/2024:16:50:54 +0530] "GET /ims/api/customers/1 HTTP/1.1" 404 44

@@ -37,8 +37,8 @@ public class WarehousesResource {
     }
 
     @GET
-    @Path("/{itemId}")
-    public Response getWarehouseById(@PathParam("itemId") int id) {
+    @Path("/{warehouseId}")
+    public Response getWarehouseById(@PathParam("warehouseId") int id) {
         try {
             return Response.ok(warehousesDao.getWarehouseById(id)).build();
         } catch (Exception e) {
@@ -60,8 +60,8 @@ public class WarehousesResource {
     }
 
     @PUT
-    @Path("/{itemId}")
-    public Response editWarehouse(@PathParam("itemId") int id, Warehouse warehouse) {
+    @Path("/{warehouseId}")
+    public Response editWarehouse(@PathParam("warehouseId") int id, Warehouse warehouse) {
         try {
             return Response.ok(warehousesDao.editWarehouse(id, warehouse) == 1 ? warehouse : Utilities.jsonMessage("Nothing Edited")).build();
         } catch (Exception e) {
@@ -72,8 +72,8 @@ public class WarehousesResource {
     }
 
     @DELETE
-    @Path("/{itemId}")
-    public Response deleteWarehouse(@PathParam("itemId") int id) {
+    @Path("/{warehouseId}")
+    public Response deleteWarehouse(@PathParam("warehouseId") int id) {
         try {
             return Response.ok(Utilities.jsonMessage("Deleted " + warehousesDao.deleteWarehouse(id) + " warehouses")).build();
         } catch (Exception e) {
@@ -84,7 +84,7 @@ public class WarehousesResource {
     }
 
     @GET
-    @Path("{warehouseId}/items")
+    @Path("{warehouseId}/batches")
     public Response getWarehouseItems(@PathParam("warehouseId") int warehouseId){
         try{
             return Response.ok(warehousesDao.getWarehouseItems(warehouseId)).build();
@@ -96,7 +96,7 @@ public class WarehousesResource {
     }
 
     @GET
-    @Path("/items")
+    @Path("/batches")
     public Response getAllWarehouseItems(){
         try{
             return Response.ok(warehousesDao.getWarehouseItems()).build();
