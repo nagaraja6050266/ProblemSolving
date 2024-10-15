@@ -1,5 +1,6 @@
 package supermarket.models;
 
+
 public class LineItem {
     private int itemId;
     private float quantity;
@@ -28,4 +29,13 @@ public class LineItem {
     public void setAmount(float amount) {
         this.amount = amount;
     }
+
+    public LineItem(){}
+
+    public LineItem(int itemId, float quantity, float amount) {
+        this.itemId = itemId;
+        this.quantity = quantity;
+        this.amount = amount;
+    }
 }
+

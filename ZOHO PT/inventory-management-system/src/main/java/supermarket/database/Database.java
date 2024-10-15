@@ -2,6 +2,7 @@ package supermarket.database;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.SQLException;
 
 
 public class Database {
@@ -10,6 +11,7 @@ public class Database {
     private static final String USER = "root";
     private static final String PASSWORD = "";
     private static Connection connection=createConnection();
+    private static Connection transactionConn=createConnection();
 
     public static Connection createConnection(){
         try {
@@ -29,4 +31,10 @@ public class Database {
     public static Connection getConnection() {
         return connection;
     }
+
+    public static Connection getTransactionConn() throws SQLException {
+        transactionConn.setAutoCommit(false);
+        return transactionConn;
+    }
+
 }

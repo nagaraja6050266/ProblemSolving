@@ -1,12 +1,13 @@
 package supermarket.models;
 
 import java.sql.Date;
+import java.util.ArrayList;
 import java.util.List;
 
-public class Sales {
+public class Sale {
     private int salesId;
     private Date date;
-    private List<LineItem> salesItems;
+    private List<LineItem> salesItems=new ArrayList<>();
     private int customerId;
     private float totalAmount;
 
@@ -50,4 +51,16 @@ public class Sales {
         this.totalAmount = totalAmount;
     }
 
+    public void addItem(LineItem item){
+        this.salesItems.add(item);
+    }
+
+    public Sale(int salesId, Date date, int customerId, float totalAmount) {
+        this.salesId = salesId;
+        this.date = date;
+        this.customerId = customerId;
+        this.totalAmount = totalAmount;
+    }
+    public Sale(){
+    }
 }

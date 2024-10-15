@@ -3,11 +3,13 @@ package supermarket.resources;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
+import supermarket.dao.BatchesDao;
 import supermarket.dao.DaoDistributor;
 import supermarket.dao.WarehousesDao;
 import supermarket.models.Warehouse;
 import supermarket.publicUtilities.Utilities;
 
+import java.sql.SQLException;
 import java.util.List;
 
 @Path("/warehouses")
@@ -16,6 +18,10 @@ import java.util.List;
 public class WarehousesResource {
 
     WarehousesDao warehousesDao = DaoDistributor.getWarehousesDao();
+    BatchesDao batchesDao = DaoDistributor.getBatchesDao();
+
+    public WarehousesResource() throws SQLException {
+    }
 
     @GET
     public Response getAllWarehouses() {
@@ -72,6 +78,42 @@ public class WarehousesResource {
         } catch (Exception e) {
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
                     .entity(Utilities.jsonMessage("Error: " + e.toString()))
+                    .build();
+        }
+    }
+
+    @GET
+    @Path("{warehouseId}/items")
+    public Response getWarehouseItems(@PathParam("warehouseId") int warehouseId){
+        try{
+            return Response.ok(warehousesDao.getWarehouseItems(warehouseId)).build();
+        } catch (Exception e){
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
+                    .entity(Utilities.jsonMessage("Error: " + e.toString()))
+                    .build();
+        }
+    }
+
+    @GET
+    @Path("/items")
+    public Response getAllWarehouseItems(){
+        try{
+            return Response.ok(warehousesDao.getWarehouseItems()).build();
+        } catch (Exception e){
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
+                    .entity(Utilities.jsonMessage("Error: " + e.toString()))
+                    .build();
+        }
+    }
+
+    @GET
+    @Path("/items/expired")
+    public Response getExpiredItems(){
+        try{
+            return Response.ok(batchesDao.expiredBatches()).build();
+        } catch (Exception e){
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
+                    .entity(Utilities.jsonMessage("Error: "+e.toString()))
                     .build();
         }
     }

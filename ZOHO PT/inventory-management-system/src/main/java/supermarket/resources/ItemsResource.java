@@ -5,9 +5,14 @@ import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import supermarket.dao.DaoDistributor;
 import supermarket.dao.ItemsDao;
+import supermarket.dao.PurchasesDao;
+import supermarket.dto.ItemDto;
+import supermarket.dto.ItemWarehouseDto;
 import supermarket.models.Item;
+import supermarket.models.Purchase;
 import supermarket.publicUtilities.Utilities;
 
+import java.sql.SQLException;
 import java.util.List;
 
 @Path("/items")
@@ -16,6 +21,9 @@ import java.util.List;
 public class ItemsResource {
 
     ItemsDao itemsDao = DaoDistributor.getItemsDao();
+
+    public ItemsResource() throws SQLException {
+    }
 
     @GET
     public Response getAllItems() {
@@ -42,9 +50,9 @@ public class ItemsResource {
     }
 
     @POST
-    public Response createItem(Item item) {
+    public Response createItem(ItemWarehouseDto itemWarehouseDto) {
         try {
-            return Response.ok(itemsDao.addItem(item)).build();
+            return Response.ok(itemsDao.addItem(itemWarehouseDto)).build();
         } catch (Exception e) {
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
                     .entity(Utilities.jsonMessage("Error: " + e.toString()))
@@ -75,4 +83,5 @@ public class ItemsResource {
                     .build();
         }
     }
+
 }
