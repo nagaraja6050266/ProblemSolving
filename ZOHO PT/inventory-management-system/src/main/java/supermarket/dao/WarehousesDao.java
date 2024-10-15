@@ -77,7 +77,7 @@ public class WarehousesDao {
         ResultSet resultSet = statement.executeQuery();
         List<BatchDto> warehouseBatches=new ArrayList<>();
         while(resultSet.next()){
-            warehouseBatches.add(Utilities.createBatch(resultSet));
+            warehouseBatches.add(new BatchDto(resultSet));
         }
         return warehouseBatches;
     }
@@ -100,7 +100,7 @@ public class WarehousesDao {
                 }
                 currWarehouse=new WarehouseDto(Utilities.createWarehouse(resultSet),new ArrayList<>());
             }
-            currWarehouse.addBatch(Utilities.createBatch(resultSet));
+            currWarehouse.addBatch(new BatchDto(resultSet));
             prevId=resultSet.getInt("warehouseId");
         }
         warehouses.add(currWarehouse);

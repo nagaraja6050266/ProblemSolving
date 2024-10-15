@@ -11,6 +11,14 @@ public class DaoDistributor {
     private static BatchesDao batchesDao;
     private static PurchasesDao purchasesDao;
     private static SalesDao salesDao;
+    private static AdjustedItemsDao adjustedItemsDao;
+
+    public static AdjustedItemsDao getExpiredItemsDao() {
+        if(adjustedItemsDao ==null){
+            adjustedItemsDao =new AdjustedItemsDao();
+        }
+        return adjustedItemsDao;
+    }
 
     public static SalesDao getSalesDao() throws SQLException {
         if(salesDao==null){

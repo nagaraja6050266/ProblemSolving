@@ -1783,3 +1783,920 @@
 15-Oct-2024 13:35:38.393 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/Users/naga-pt7740/Documents/INR Codings from GIT/ProblemSolving/ZOHO PT/inventory-management-system/conf/Catalina/localhost/ims.xml] has finished in [985] ms
 15-Oct-2024 13:35:38.395 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8082"]
 15-Oct-2024 13:35:38.398 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [1009] milliseconds
+15-Oct-2024 14:29:23.305 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8082"]
+15-Oct-2024 14:29:23.307 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+15-Oct-2024 14:29:23.315 WARNING [Thread-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [ims] registered the JDBC driver [com.mysql.cj.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+15-Oct-2024 14:29:23.315 WARNING [Thread-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [ims] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:269)
+ java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1852)
+ java.base/java.lang.ref.ReferenceQueue.await(ReferenceQueue.java:79)
+ java.base/java.lang.ref.ReferenceQueue.remove0(ReferenceQueue.java:151)
+ java.base/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:229)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:91)
+ java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+ java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+ java.base/java.lang.Thread.run(Thread.java:1575)
+15-Oct-2024 14:29:23.318 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8082"]
+15-Oct-2024 14:29:23.332 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8082"]
+15-Oct-2024 14:29:24.563 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/10.1.30
+15-Oct-2024 14:29:24.566 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Sep 13 2024 20:26:16 UTC
+15-Oct-2024 14:29:24.566 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 10.1.30.0
+15-Oct-2024 14:29:24.567 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Mac OS X
+15-Oct-2024 14:29:24.567 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            14.7
+15-Oct-2024 14:29:24.567 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          aarch64
+15-Oct-2024 14:29:24.567 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /Users/naga-pt7740/Library/Java/JavaVirtualMachines/openjdk-23/Contents/Home
+15-Oct-2024 14:29:24.567 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           23+37-2369
+15-Oct-2024 14:29:24.567 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+15-Oct-2024 14:29:24.567 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /Users/naga-pt7740/Documents/INR Codings from GIT/ProblemSolving/ZOHO PT/inventory-management-system
+15-Oct-2024 14:29:24.567 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /Users/naga-pt7740/Downloads/apache-tomcat-10.1.30
+15-Oct-2024 14:29:24.571 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+15-Oct-2024 14:29:24.571 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+15-Oct-2024 14:29:24.571 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+15-Oct-2024 14:29:24.571 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+15-Oct-2024 14:29:24.571 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+15-Oct-2024 14:29:24.571 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/Users/naga-pt7740/Downloads/apache-tomcat-10.1.30
+15-Oct-2024 14:29:24.571 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/Users/naga-pt7740/Documents/INR Codings from GIT/ProblemSolving/ZOHO PT/inventory-management-system
+15-Oct-2024 14:29:24.571 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/Users/naga-pt7740/Documents/INR Codings from GIT/ProblemSolving/ZOHO PT/inventory-management-system/temp
+15-Oct-2024 14:29:24.571 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/Users/naga-pt7740/Documents/INR Codings from GIT/ProblemSolving/ZOHO PT/inventory-management-system/conf/logging.properties
+15-Oct-2024 14:29:24.571 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+15-Oct-2024 14:29:24.571 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -javaagent:/Applications/IntelliJ IDEA CE.app/Contents/lib/idea_rt.jar=50619:/Applications/IntelliJ IDEA CE.app/Contents/bin
+15-Oct-2024 14:29:24.571 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dfile.encoding=UTF-8
+15-Oct-2024 14:29:24.571 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stdout.encoding=UTF-8
+15-Oct-2024 14:29:24.571 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stderr.encoding=UTF-8
+15-Oct-2024 14:29:24.576 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/Users/naga-pt7740/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+15-Oct-2024 14:29:24.768 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8082"]
+15-Oct-2024 14:29:24.777 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [289] milliseconds
+15-Oct-2024 14:29:24.803 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+15-Oct-2024 14:29:24.803 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/10.1.30]
+15-Oct-2024 14:29:24.810 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [/Users/naga-pt7740/Documents/INR Codings from GIT/ProblemSolving/ZOHO PT/inventory-management-system/conf/Catalina/localhost/ims.xml]
+15-Oct-2024 14:29:25.427 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+15-Oct-2024 14:29:25.678 WARNING [main] org.glassfish.jersey.message.internal.MessagingBinders$EnabledProvidersBinder.bindToBinder A class jakarta.activation.DataSource for a default provider MessageBodyWriter<jakarta.activation.DataSource> was not found. The provider is not available.
+15-Oct-2024 14:29:25.695 WARNING [main] org.glassfish.jersey.server.wadl.WadlFeature.configure JAX-B API not found . WADL feature is disabled.
+15-Oct-2024 14:29:25.856 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/Users/naga-pt7740/Documents/INR Codings from GIT/ProblemSolving/ZOHO PT/inventory-management-system/conf/Catalina/localhost/ims.xml] has finished in [1,046] ms
+15-Oct-2024 14:29:25.858 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8082"]
+15-Oct-2024 14:29:25.862 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [1085] milliseconds
+15-Oct-2024 14:30:54.023 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8082"]
+15-Oct-2024 14:30:54.025 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+15-Oct-2024 14:30:54.030 WARNING [Thread-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [ims] registered the JDBC driver [com.mysql.cj.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+15-Oct-2024 14:30:54.031 WARNING [Thread-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [ims] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:269)
+ java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1852)
+ java.base/java.lang.ref.ReferenceQueue.await(ReferenceQueue.java:79)
+ java.base/java.lang.ref.ReferenceQueue.remove0(ReferenceQueue.java:151)
+ java.base/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:229)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:91)
+ java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+ java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+ java.base/java.lang.Thread.run(Thread.java:1575)
+15-Oct-2024 14:30:54.033 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8082"]
+15-Oct-2024 14:30:54.034 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8082"]
+15-Oct-2024 14:30:55.224 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/10.1.30
+15-Oct-2024 14:30:55.226 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Sep 13 2024 20:26:16 UTC
+15-Oct-2024 14:30:55.226 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 10.1.30.0
+15-Oct-2024 14:30:55.226 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Mac OS X
+15-Oct-2024 14:30:55.226 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            14.7
+15-Oct-2024 14:30:55.226 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          aarch64
+15-Oct-2024 14:30:55.226 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /Users/naga-pt7740/Library/Java/JavaVirtualMachines/openjdk-23/Contents/Home
+15-Oct-2024 14:30:55.226 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           23+37-2369
+15-Oct-2024 14:30:55.226 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+15-Oct-2024 14:30:55.226 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /Users/naga-pt7740/Documents/INR Codings from GIT/ProblemSolving/ZOHO PT/inventory-management-system
+15-Oct-2024 14:30:55.226 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /Users/naga-pt7740/Downloads/apache-tomcat-10.1.30
+15-Oct-2024 14:30:55.231 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+15-Oct-2024 14:30:55.231 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+15-Oct-2024 14:30:55.231 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+15-Oct-2024 14:30:55.231 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+15-Oct-2024 14:30:55.231 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+15-Oct-2024 14:30:55.231 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/Users/naga-pt7740/Downloads/apache-tomcat-10.1.30
+15-Oct-2024 14:30:55.231 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/Users/naga-pt7740/Documents/INR Codings from GIT/ProblemSolving/ZOHO PT/inventory-management-system
+15-Oct-2024 14:30:55.231 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/Users/naga-pt7740/Documents/INR Codings from GIT/ProblemSolving/ZOHO PT/inventory-management-system/temp
+15-Oct-2024 14:30:55.232 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/Users/naga-pt7740/Documents/INR Codings from GIT/ProblemSolving/ZOHO PT/inventory-management-system/conf/logging.properties
+15-Oct-2024 14:30:55.232 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+15-Oct-2024 14:30:55.232 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -javaagent:/Applications/IntelliJ IDEA CE.app/Contents/lib/idea_rt.jar=50647:/Applications/IntelliJ IDEA CE.app/Contents/bin
+15-Oct-2024 14:30:55.232 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dfile.encoding=UTF-8
+15-Oct-2024 14:30:55.232 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stdout.encoding=UTF-8
+15-Oct-2024 14:30:55.232 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stderr.encoding=UTF-8
+15-Oct-2024 14:30:55.236 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/Users/naga-pt7740/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+15-Oct-2024 14:30:55.407 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8082"]
+15-Oct-2024 14:30:55.416 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [264] milliseconds
+15-Oct-2024 14:30:55.435 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+15-Oct-2024 14:30:55.435 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/10.1.30]
+15-Oct-2024 14:30:55.439 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [/Users/naga-pt7740/Documents/INR Codings from GIT/ProblemSolving/ZOHO PT/inventory-management-system/conf/Catalina/localhost/ims.xml]
+15-Oct-2024 14:30:56.002 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+15-Oct-2024 14:30:56.239 WARNING [main] org.glassfish.jersey.message.internal.MessagingBinders$EnabledProvidersBinder.bindToBinder A class jakarta.activation.DataSource for a default provider MessageBodyWriter<jakarta.activation.DataSource> was not found. The provider is not available.
+15-Oct-2024 14:30:56.258 WARNING [main] org.glassfish.jersey.server.wadl.WadlFeature.configure JAX-B API not found . WADL feature is disabled.
+15-Oct-2024 14:30:56.437 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/Users/naga-pt7740/Documents/INR Codings from GIT/ProblemSolving/ZOHO PT/inventory-management-system/conf/Catalina/localhost/ims.xml] has finished in [998] ms
+15-Oct-2024 14:30:56.439 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8082"]
+15-Oct-2024 14:30:56.443 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [1026] milliseconds
+15-Oct-2024 14:31:49.056 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8082"]
+15-Oct-2024 14:31:49.057 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+15-Oct-2024 14:31:49.063 WARNING [Thread-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [ims] registered the JDBC driver [com.mysql.cj.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+15-Oct-2024 14:31:49.064 WARNING [Thread-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [ims] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:269)
+ java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1852)
+ java.base/java.lang.ref.ReferenceQueue.await(ReferenceQueue.java:79)
+ java.base/java.lang.ref.ReferenceQueue.remove0(ReferenceQueue.java:151)
+ java.base/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:229)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:91)
+ java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+ java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+ java.base/java.lang.Thread.run(Thread.java:1575)
+15-Oct-2024 14:31:49.066 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8082"]
+15-Oct-2024 14:31:49.069 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8082"]
+15-Oct-2024 14:31:50.394 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/10.1.30
+15-Oct-2024 14:31:50.395 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Sep 13 2024 20:26:16 UTC
+15-Oct-2024 14:31:50.395 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 10.1.30.0
+15-Oct-2024 14:31:50.395 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Mac OS X
+15-Oct-2024 14:31:50.395 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            14.7
+15-Oct-2024 14:31:50.395 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          aarch64
+15-Oct-2024 14:31:50.395 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /Users/naga-pt7740/Library/Java/JavaVirtualMachines/openjdk-23/Contents/Home
+15-Oct-2024 14:31:50.395 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           23+37-2369
+15-Oct-2024 14:31:50.395 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+15-Oct-2024 14:31:50.395 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /Users/naga-pt7740/Documents/INR Codings from GIT/ProblemSolving/ZOHO PT/inventory-management-system
+15-Oct-2024 14:31:50.395 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /Users/naga-pt7740/Downloads/apache-tomcat-10.1.30
+15-Oct-2024 14:31:50.400 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+15-Oct-2024 14:31:50.400 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+15-Oct-2024 14:31:50.400 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+15-Oct-2024 14:31:50.400 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+15-Oct-2024 14:31:50.400 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+15-Oct-2024 14:31:50.400 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/Users/naga-pt7740/Downloads/apache-tomcat-10.1.30
+15-Oct-2024 14:31:50.401 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/Users/naga-pt7740/Documents/INR Codings from GIT/ProblemSolving/ZOHO PT/inventory-management-system
+15-Oct-2024 14:31:50.401 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/Users/naga-pt7740/Documents/INR Codings from GIT/ProblemSolving/ZOHO PT/inventory-management-system/temp
+15-Oct-2024 14:31:50.401 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/Users/naga-pt7740/Documents/INR Codings from GIT/ProblemSolving/ZOHO PT/inventory-management-system/conf/logging.properties
+15-Oct-2024 14:31:50.401 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+15-Oct-2024 14:31:50.401 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -javaagent:/Applications/IntelliJ IDEA CE.app/Contents/lib/idea_rt.jar=50660:/Applications/IntelliJ IDEA CE.app/Contents/bin
+15-Oct-2024 14:31:50.401 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dfile.encoding=UTF-8
+15-Oct-2024 14:31:50.401 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stdout.encoding=UTF-8
+15-Oct-2024 14:31:50.401 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stderr.encoding=UTF-8
+15-Oct-2024 14:31:50.406 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/Users/naga-pt7740/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+15-Oct-2024 14:31:50.540 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8082"]
+15-Oct-2024 14:31:50.548 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [228] milliseconds
+15-Oct-2024 14:31:50.564 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+15-Oct-2024 14:31:50.564 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/10.1.30]
+15-Oct-2024 14:31:50.567 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [/Users/naga-pt7740/Documents/INR Codings from GIT/ProblemSolving/ZOHO PT/inventory-management-system/conf/Catalina/localhost/ims.xml]
+15-Oct-2024 14:31:51.137 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+15-Oct-2024 14:31:51.383 WARNING [main] org.glassfish.jersey.message.internal.MessagingBinders$EnabledProvidersBinder.bindToBinder A class jakarta.activation.DataSource for a default provider MessageBodyWriter<jakarta.activation.DataSource> was not found. The provider is not available.
+15-Oct-2024 14:31:51.400 WARNING [main] org.glassfish.jersey.server.wadl.WadlFeature.configure JAX-B API not found . WADL feature is disabled.
+15-Oct-2024 14:31:51.571 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/Users/naga-pt7740/Documents/INR Codings from GIT/ProblemSolving/ZOHO PT/inventory-management-system/conf/Catalina/localhost/ims.xml] has finished in [1,004] ms
+15-Oct-2024 14:31:51.572 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8082"]
+15-Oct-2024 14:31:51.576 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [1028] milliseconds
+15-Oct-2024 14:38:20.137 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8082"]
+15-Oct-2024 14:38:20.139 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+15-Oct-2024 14:38:20.145 WARNING [Thread-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [ims] registered the JDBC driver [com.mysql.cj.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+15-Oct-2024 14:38:20.145 WARNING [Thread-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [ims] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:269)
+ java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1852)
+ java.base/java.lang.ref.ReferenceQueue.await(ReferenceQueue.java:79)
+ java.base/java.lang.ref.ReferenceQueue.remove0(ReferenceQueue.java:151)
+ java.base/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:229)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:91)
+ java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+ java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+ java.base/java.lang.Thread.run(Thread.java:1575)
+15-Oct-2024 14:38:20.148 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8082"]
+15-Oct-2024 14:38:20.150 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8082"]
+15-Oct-2024 14:38:21.332 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/10.1.30
+15-Oct-2024 14:38:21.334 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Sep 13 2024 20:26:16 UTC
+15-Oct-2024 14:38:21.334 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 10.1.30.0
+15-Oct-2024 14:38:21.334 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Mac OS X
+15-Oct-2024 14:38:21.334 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            14.7
+15-Oct-2024 14:38:21.334 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          aarch64
+15-Oct-2024 14:38:21.334 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /Users/naga-pt7740/Library/Java/JavaVirtualMachines/openjdk-23/Contents/Home
+15-Oct-2024 14:38:21.334 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           23+37-2369
+15-Oct-2024 14:38:21.334 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+15-Oct-2024 14:38:21.334 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /Users/naga-pt7740/Documents/INR Codings from GIT/ProblemSolving/ZOHO PT/inventory-management-system
+15-Oct-2024 14:38:21.334 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /Users/naga-pt7740/Downloads/apache-tomcat-10.1.30
+15-Oct-2024 14:38:21.339 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+15-Oct-2024 14:38:21.339 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+15-Oct-2024 14:38:21.339 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+15-Oct-2024 14:38:21.339 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+15-Oct-2024 14:38:21.339 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+15-Oct-2024 14:38:21.339 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/Users/naga-pt7740/Downloads/apache-tomcat-10.1.30
+15-Oct-2024 14:38:21.339 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/Users/naga-pt7740/Documents/INR Codings from GIT/ProblemSolving/ZOHO PT/inventory-management-system
+15-Oct-2024 14:38:21.339 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/Users/naga-pt7740/Documents/INR Codings from GIT/ProblemSolving/ZOHO PT/inventory-management-system/temp
+15-Oct-2024 14:38:21.339 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/Users/naga-pt7740/Documents/INR Codings from GIT/ProblemSolving/ZOHO PT/inventory-management-system/conf/logging.properties
+15-Oct-2024 14:38:21.339 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+15-Oct-2024 14:38:21.339 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -javaagent:/Applications/IntelliJ IDEA CE.app/Contents/lib/idea_rt.jar=50684:/Applications/IntelliJ IDEA CE.app/Contents/bin
+15-Oct-2024 14:38:21.339 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dfile.encoding=UTF-8
+15-Oct-2024 14:38:21.339 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stdout.encoding=UTF-8
+15-Oct-2024 14:38:21.339 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stderr.encoding=UTF-8
+15-Oct-2024 14:38:21.344 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/Users/naga-pt7740/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+15-Oct-2024 14:38:21.503 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8082"]
+15-Oct-2024 14:38:21.517 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [256] milliseconds
+15-Oct-2024 14:38:21.561 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+15-Oct-2024 14:38:21.561 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/10.1.30]
+15-Oct-2024 14:38:21.570 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [/Users/naga-pt7740/Documents/INR Codings from GIT/ProblemSolving/ZOHO PT/inventory-management-system/conf/Catalina/localhost/ims.xml]
+15-Oct-2024 14:38:22.159 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+15-Oct-2024 14:38:22.403 WARNING [main] org.glassfish.jersey.message.internal.MessagingBinders$EnabledProvidersBinder.bindToBinder A class jakarta.activation.DataSource for a default provider MessageBodyWriter<jakarta.activation.DataSource> was not found. The provider is not available.
+15-Oct-2024 14:38:22.423 WARNING [main] org.glassfish.jersey.server.wadl.WadlFeature.configure JAX-B API not found . WADL feature is disabled.
+15-Oct-2024 14:38:22.586 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/Users/naga-pt7740/Documents/INR Codings from GIT/ProblemSolving/ZOHO PT/inventory-management-system/conf/Catalina/localhost/ims.xml] has finished in [1,016] ms
+15-Oct-2024 14:38:22.587 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8082"]
+15-Oct-2024 14:38:22.591 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [1073] milliseconds
+15-Oct-2024 15:43:39.641 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8082"]
+15-Oct-2024 15:43:39.642 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+15-Oct-2024 15:43:39.652 WARNING [Thread-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [ims] registered the JDBC driver [com.mysql.cj.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+15-Oct-2024 15:43:39.652 WARNING [Thread-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [ims] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:269)
+ java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1852)
+ java.base/java.lang.ref.ReferenceQueue.await(ReferenceQueue.java:79)
+ java.base/java.lang.ref.ReferenceQueue.remove0(ReferenceQueue.java:151)
+ java.base/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:229)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:91)
+ java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+ java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+ java.base/java.lang.Thread.run(Thread.java:1575)
+15-Oct-2024 15:43:39.655 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8082"]
+15-Oct-2024 15:43:39.665 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8082"]
+15-Oct-2024 15:43:41.069 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/10.1.30
+15-Oct-2024 15:43:41.070 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Sep 13 2024 20:26:16 UTC
+15-Oct-2024 15:43:41.070 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 10.1.30.0
+15-Oct-2024 15:43:41.070 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Mac OS X
+15-Oct-2024 15:43:41.070 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            14.7
+15-Oct-2024 15:43:41.070 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          aarch64
+15-Oct-2024 15:43:41.070 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /Users/naga-pt7740/Library/Java/JavaVirtualMachines/openjdk-23/Contents/Home
+15-Oct-2024 15:43:41.070 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           23+37-2369
+15-Oct-2024 15:43:41.070 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+15-Oct-2024 15:43:41.070 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /Users/naga-pt7740/Documents/INR Codings from GIT/ProblemSolving/ZOHO PT/inventory-management-system
+15-Oct-2024 15:43:41.070 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /Users/naga-pt7740/Downloads/apache-tomcat-10.1.30
+15-Oct-2024 15:43:41.075 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+15-Oct-2024 15:43:41.075 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+15-Oct-2024 15:43:41.075 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+15-Oct-2024 15:43:41.075 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+15-Oct-2024 15:43:41.075 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+15-Oct-2024 15:43:41.075 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/Users/naga-pt7740/Downloads/apache-tomcat-10.1.30
+15-Oct-2024 15:43:41.075 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/Users/naga-pt7740/Documents/INR Codings from GIT/ProblemSolving/ZOHO PT/inventory-management-system
+15-Oct-2024 15:43:41.075 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/Users/naga-pt7740/Documents/INR Codings from GIT/ProblemSolving/ZOHO PT/inventory-management-system/temp
+15-Oct-2024 15:43:41.076 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/Users/naga-pt7740/Documents/INR Codings from GIT/ProblemSolving/ZOHO PT/inventory-management-system/conf/logging.properties
+15-Oct-2024 15:43:41.076 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+15-Oct-2024 15:43:41.076 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -javaagent:/Applications/IntelliJ IDEA CE.app/Contents/lib/idea_rt.jar=51149:/Applications/IntelliJ IDEA CE.app/Contents/bin
+15-Oct-2024 15:43:41.076 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dfile.encoding=UTF-8
+15-Oct-2024 15:43:41.076 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stdout.encoding=UTF-8
+15-Oct-2024 15:43:41.076 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stderr.encoding=UTF-8
+15-Oct-2024 15:43:41.081 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/Users/naga-pt7740/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+15-Oct-2024 15:43:41.219 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8082"]
+15-Oct-2024 15:43:41.229 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [232] milliseconds
+15-Oct-2024 15:43:41.246 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+15-Oct-2024 15:43:41.246 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/10.1.30]
+15-Oct-2024 15:43:41.250 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [/Users/naga-pt7740/Documents/INR Codings from GIT/ProblemSolving/ZOHO PT/inventory-management-system/conf/Catalina/localhost/ims.xml]
+15-Oct-2024 15:43:41.848 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+15-Oct-2024 15:43:42.087 WARNING [main] org.glassfish.jersey.message.internal.MessagingBinders$EnabledProvidersBinder.bindToBinder A class jakarta.activation.DataSource for a default provider MessageBodyWriter<jakarta.activation.DataSource> was not found. The provider is not available.
+15-Oct-2024 15:43:42.105 WARNING [main] org.glassfish.jersey.server.wadl.WadlFeature.configure JAX-B API not found . WADL feature is disabled.
+15-Oct-2024 15:43:42.274 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/Users/naga-pt7740/Documents/INR Codings from GIT/ProblemSolving/ZOHO PT/inventory-management-system/conf/Catalina/localhost/ims.xml] has finished in [1,023] ms
+15-Oct-2024 15:43:42.275 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8082"]
+15-Oct-2024 15:43:42.280 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [1049] milliseconds
+15-Oct-2024 15:44:21.840 WARNING [http-nio-8082-exec-5] org.glassfish.jersey.server.ServerRuntime$Responder.process An exception mapping did not successfully produce and processed a response. Logging the exception propagated to the default exception mapper.
+	jakarta.ws.rs.ProcessingException: Error deserializing object from entity stream.
+		at org.glassfish.jersey.jsonb.internal.JsonBindingProvider.readFrom(JsonBindingProvider.java:93)
+		at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$TerminalReaderInterceptor.invokeReadFrom(ReaderInterceptorExecutor.java:235)
+		at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$TerminalReaderInterceptor.aroundReadFrom(ReaderInterceptorExecutor.java:214)
+		at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor.proceed(ReaderInterceptorExecutor.java:134)
+		at org.glassfish.jersey.server.internal.MappableExceptionWrapperInterceptor.aroundReadFrom(MappableExceptionWrapperInterceptor.java:49)
+		at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor.proceed(ReaderInterceptorExecutor.java:134)
+		at org.glassfish.jersey.message.internal.MessageBodyFactory.readFrom(MessageBodyFactory.java:1074)
+		at org.glassfish.jersey.message.internal.InboundMessageContext.readEntity(InboundMessageContext.java:657)
+		at org.glassfish.jersey.server.ContainerRequest.readEntity(ContainerRequest.java:290)
+		at org.glassfish.jersey.server.internal.inject.EntityParamValueParamProvider$EntityValueSupplier.apply(EntityParamValueParamProvider.java:73)
+		at org.glassfish.jersey.server.internal.inject.EntityParamValueParamProvider$EntityValueSupplier.apply(EntityParamValueParamProvider.java:56)
+		at org.glassfish.jersey.server.spi.internal.ParamValueFactoryWithSource.apply(ParamValueFactoryWithSource.java:50)
+		at org.glassfish.jersey.server.spi.internal.ParameterValueHelper.getParameterValues(ParameterValueHelper.java:68)
+		at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$AbstractMethodParamInvoker.getParamValues(JavaResourceMethodDispatcherProvider.java:109)
+		at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$ResponseOutInvoker.doDispatch(JavaResourceMethodDispatcherProvider.java:176)
+		at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.dispatch(AbstractJavaResourceMethodDispatcher.java:93)
+		at org.glassfish.jersey.server.model.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:478)
+		at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:400)
+		at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:81)
+		at org.glassfish.jersey.server.ServerRuntime$1.run(ServerRuntime.java:263)
+		at org.glassfish.jersey.internal.Errors$1.call(Errors.java:248)
+		at org.glassfish.jersey.internal.Errors$1.call(Errors.java:244)
+		at org.glassfish.jersey.internal.Errors.process(Errors.java:292)
+		at org.glassfish.jersey.internal.Errors.process(Errors.java:274)
+		at org.glassfish.jersey.internal.Errors.process(Errors.java:244)
+		at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:266)
+		at org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:242)
+		at org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:704)
+		at org.glassfish.jersey.servlet.WebComponent.serviceImpl(WebComponent.java:420)
+		at org.glassfish.jersey.servlet.WebComponent.service(WebComponent.java:372)
+		at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:358)
+		at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:312)
+		at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:205)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:663)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:1575)
+	Caused by: jakarta.json.bind.JsonbException: Cannot create instance of a class: class supermarket.dto.ExpiredBatch, No default constructor found.
+		at org.eclipse.yasson.internal.deserializer.DefaultObjectInstanceCreator.<init>(DefaultObjectInstanceCreator.java:44)
+		at org.eclipse.yasson.internal.deserializer.DeserializationModelCreator.createObjectDeserializer(DeserializationModelCreator.java:251)
+		at org.eclipse.yasson.internal.deserializer.DeserializationModelCreator.deserializerChainInternal(DeserializationModelCreator.java:193)
+		at org.eclipse.yasson.internal.deserializer.DeserializationModelCreator.deserializerChain(DeserializationModelCreator.java:135)
+		at org.eclipse.yasson.internal.deserializer.DeserializationModelCreator.deserializerChain(DeserializationModelCreator.java:123)
+		at org.eclipse.yasson.internal.DeserializationContextImpl.deserializeItem(DeserializationContextImpl.java:137)
+		at org.eclipse.yasson.internal.DeserializationContextImpl.deserialize(DeserializationContextImpl.java:127)
+		at org.eclipse.yasson.internal.JsonBinding.deserialize(JsonBinding.java:55)
+		at org.eclipse.yasson.internal.JsonBinding.fromJson(JsonBinding.java:102)
+		at org.glassfish.jersey.jsonb.internal.JsonBindingProvider.readFrom(JsonBindingProvider.java:91)
+		... 54 more
+15-Oct-2024 15:46:11.483 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8082"]
+15-Oct-2024 15:46:11.484 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+15-Oct-2024 15:46:11.489 WARNING [Thread-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [ims] registered the JDBC driver [com.mysql.cj.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+15-Oct-2024 15:46:11.490 WARNING [Thread-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [ims] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:269)
+ java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1852)
+ java.base/java.lang.ref.ReferenceQueue.await(ReferenceQueue.java:79)
+ java.base/java.lang.ref.ReferenceQueue.remove0(ReferenceQueue.java:151)
+ java.base/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:229)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:91)
+ java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+ java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+ java.base/java.lang.Thread.run(Thread.java:1575)
+15-Oct-2024 15:46:11.492 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8082"]
+15-Oct-2024 15:46:11.494 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8082"]
+15-Oct-2024 15:46:12.632 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/10.1.30
+15-Oct-2024 15:46:12.633 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Sep 13 2024 20:26:16 UTC
+15-Oct-2024 15:46:12.633 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 10.1.30.0
+15-Oct-2024 15:46:12.633 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Mac OS X
+15-Oct-2024 15:46:12.633 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            14.7
+15-Oct-2024 15:46:12.633 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          aarch64
+15-Oct-2024 15:46:12.633 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /Users/naga-pt7740/Library/Java/JavaVirtualMachines/openjdk-23/Contents/Home
+15-Oct-2024 15:46:12.634 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           23+37-2369
+15-Oct-2024 15:46:12.634 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+15-Oct-2024 15:46:12.634 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /Users/naga-pt7740/Documents/INR Codings from GIT/ProblemSolving/ZOHO PT/inventory-management-system
+15-Oct-2024 15:46:12.634 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /Users/naga-pt7740/Downloads/apache-tomcat-10.1.30
+15-Oct-2024 15:46:12.638 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+15-Oct-2024 15:46:12.638 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+15-Oct-2024 15:46:12.638 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+15-Oct-2024 15:46:12.638 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+15-Oct-2024 15:46:12.638 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+15-Oct-2024 15:46:12.638 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/Users/naga-pt7740/Downloads/apache-tomcat-10.1.30
+15-Oct-2024 15:46:12.638 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/Users/naga-pt7740/Documents/INR Codings from GIT/ProblemSolving/ZOHO PT/inventory-management-system
+15-Oct-2024 15:46:12.638 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/Users/naga-pt7740/Documents/INR Codings from GIT/ProblemSolving/ZOHO PT/inventory-management-system/temp
+15-Oct-2024 15:46:12.638 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/Users/naga-pt7740/Documents/INR Codings from GIT/ProblemSolving/ZOHO PT/inventory-management-system/conf/logging.properties
+15-Oct-2024 15:46:12.638 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+15-Oct-2024 15:46:12.639 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -javaagent:/Applications/IntelliJ IDEA CE.app/Contents/lib/idea_rt.jar=51170:/Applications/IntelliJ IDEA CE.app/Contents/bin
+15-Oct-2024 15:46:12.639 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dfile.encoding=UTF-8
+15-Oct-2024 15:46:12.639 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stdout.encoding=UTF-8
+15-Oct-2024 15:46:12.639 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stderr.encoding=UTF-8
+15-Oct-2024 15:46:12.643 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/Users/naga-pt7740/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+15-Oct-2024 15:46:12.796 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8082"]
+15-Oct-2024 15:46:12.804 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [244] milliseconds
+15-Oct-2024 15:46:12.820 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+15-Oct-2024 15:46:12.820 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/10.1.30]
+15-Oct-2024 15:46:12.823 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [/Users/naga-pt7740/Documents/INR Codings from GIT/ProblemSolving/ZOHO PT/inventory-management-system/conf/Catalina/localhost/ims.xml]
+15-Oct-2024 15:46:13.392 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+15-Oct-2024 15:46:13.629 WARNING [main] org.glassfish.jersey.message.internal.MessagingBinders$EnabledProvidersBinder.bindToBinder A class jakarta.activation.DataSource for a default provider MessageBodyWriter<jakarta.activation.DataSource> was not found. The provider is not available.
+15-Oct-2024 15:46:13.649 WARNING [main] org.glassfish.jersey.server.wadl.WadlFeature.configure JAX-B API not found . WADL feature is disabled.
+15-Oct-2024 15:46:13.830 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/Users/naga-pt7740/Documents/INR Codings from GIT/ProblemSolving/ZOHO PT/inventory-management-system/conf/Catalina/localhost/ims.xml] has finished in [1,006] ms
+15-Oct-2024 15:46:13.831 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8082"]
+15-Oct-2024 15:46:13.835 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [1030] milliseconds
+15-Oct-2024 15:47:48.569 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8082"]
+15-Oct-2024 15:47:48.570 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+15-Oct-2024 15:47:48.576 WARNING [Thread-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [ims] registered the JDBC driver [com.mysql.cj.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+15-Oct-2024 15:47:48.576 WARNING [Thread-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [ims] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:269)
+ java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1852)
+ java.base/java.lang.ref.ReferenceQueue.await(ReferenceQueue.java:79)
+ java.base/java.lang.ref.ReferenceQueue.remove0(ReferenceQueue.java:151)
+ java.base/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:229)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:91)
+ java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+ java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+ java.base/java.lang.Thread.run(Thread.java:1575)
+15-Oct-2024 15:47:48.579 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8082"]
+15-Oct-2024 15:47:48.581 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8082"]
+15-Oct-2024 15:47:49.807 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/10.1.30
+15-Oct-2024 15:47:49.810 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Sep 13 2024 20:26:16 UTC
+15-Oct-2024 15:47:49.811 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 10.1.30.0
+15-Oct-2024 15:47:49.811 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Mac OS X
+15-Oct-2024 15:47:49.811 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            14.7
+15-Oct-2024 15:47:49.811 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          aarch64
+15-Oct-2024 15:47:49.811 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /Users/naga-pt7740/Library/Java/JavaVirtualMachines/openjdk-23/Contents/Home
+15-Oct-2024 15:47:49.811 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           23+37-2369
+15-Oct-2024 15:47:49.811 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+15-Oct-2024 15:47:49.811 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /Users/naga-pt7740/Documents/INR Codings from GIT/ProblemSolving/ZOHO PT/inventory-management-system
+15-Oct-2024 15:47:49.812 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /Users/naga-pt7740/Downloads/apache-tomcat-10.1.30
+15-Oct-2024 15:47:49.817 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+15-Oct-2024 15:47:49.817 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+15-Oct-2024 15:47:49.817 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+15-Oct-2024 15:47:49.817 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+15-Oct-2024 15:47:49.817 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+15-Oct-2024 15:47:49.817 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/Users/naga-pt7740/Downloads/apache-tomcat-10.1.30
+15-Oct-2024 15:47:49.817 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/Users/naga-pt7740/Documents/INR Codings from GIT/ProblemSolving/ZOHO PT/inventory-management-system
+15-Oct-2024 15:47:49.817 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/Users/naga-pt7740/Documents/INR Codings from GIT/ProblemSolving/ZOHO PT/inventory-management-system/temp
+15-Oct-2024 15:47:49.817 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/Users/naga-pt7740/Documents/INR Codings from GIT/ProblemSolving/ZOHO PT/inventory-management-system/conf/logging.properties
+15-Oct-2024 15:47:49.817 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+15-Oct-2024 15:47:49.817 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -javaagent:/Applications/IntelliJ IDEA CE.app/Contents/lib/idea_rt.jar=51190:/Applications/IntelliJ IDEA CE.app/Contents/bin
+15-Oct-2024 15:47:49.817 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dfile.encoding=UTF-8
+15-Oct-2024 15:47:49.817 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stdout.encoding=UTF-8
+15-Oct-2024 15:47:49.818 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stderr.encoding=UTF-8
+15-Oct-2024 15:47:49.822 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/Users/naga-pt7740/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+15-Oct-2024 15:47:49.966 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8082"]
+15-Oct-2024 15:47:49.974 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [238] milliseconds
+15-Oct-2024 15:47:49.988 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+15-Oct-2024 15:47:49.988 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/10.1.30]
+15-Oct-2024 15:47:49.992 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [/Users/naga-pt7740/Documents/INR Codings from GIT/ProblemSolving/ZOHO PT/inventory-management-system/conf/Catalina/localhost/ims.xml]
+15-Oct-2024 15:47:50.560 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+15-Oct-2024 15:47:50.812 WARNING [main] org.glassfish.jersey.message.internal.MessagingBinders$EnabledProvidersBinder.bindToBinder A class jakarta.activation.DataSource for a default provider MessageBodyWriter<jakarta.activation.DataSource> was not found. The provider is not available.
+15-Oct-2024 15:47:50.835 WARNING [main] org.glassfish.jersey.server.wadl.WadlFeature.configure JAX-B API not found . WADL feature is disabled.
+15-Oct-2024 15:47:51.003 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/Users/naga-pt7740/Documents/INR Codings from GIT/ProblemSolving/ZOHO PT/inventory-management-system/conf/Catalina/localhost/ims.xml] has finished in [1,011] ms
+15-Oct-2024 15:47:51.005 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8082"]
+15-Oct-2024 15:47:51.008 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [1034] milliseconds
+15-Oct-2024 15:49:14.633 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8082"]
+15-Oct-2024 15:49:14.634 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+15-Oct-2024 15:49:14.639 WARNING [Thread-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [ims] registered the JDBC driver [com.mysql.cj.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+15-Oct-2024 15:49:14.640 WARNING [Thread-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [ims] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:269)
+ java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1852)
+ java.base/java.lang.ref.ReferenceQueue.await(ReferenceQueue.java:79)
+ java.base/java.lang.ref.ReferenceQueue.remove0(ReferenceQueue.java:151)
+ java.base/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:229)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:91)
+ java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+ java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+ java.base/java.lang.Thread.run(Thread.java:1575)
+15-Oct-2024 15:49:14.642 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8082"]
+15-Oct-2024 15:49:14.644 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8082"]
+15-Oct-2024 15:49:15.841 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/10.1.30
+15-Oct-2024 15:49:15.842 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Sep 13 2024 20:26:16 UTC
+15-Oct-2024 15:49:15.842 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 10.1.30.0
+15-Oct-2024 15:49:15.842 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Mac OS X
+15-Oct-2024 15:49:15.842 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            14.7
+15-Oct-2024 15:49:15.842 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          aarch64
+15-Oct-2024 15:49:15.842 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /Users/naga-pt7740/Library/Java/JavaVirtualMachines/openjdk-23/Contents/Home
+15-Oct-2024 15:49:15.842 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           23+37-2369
+15-Oct-2024 15:49:15.842 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+15-Oct-2024 15:49:15.843 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /Users/naga-pt7740/Documents/INR Codings from GIT/ProblemSolving/ZOHO PT/inventory-management-system
+15-Oct-2024 15:49:15.843 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /Users/naga-pt7740/Downloads/apache-tomcat-10.1.30
+15-Oct-2024 15:49:15.847 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+15-Oct-2024 15:49:15.847 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+15-Oct-2024 15:49:15.847 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+15-Oct-2024 15:49:15.847 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+15-Oct-2024 15:49:15.847 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+15-Oct-2024 15:49:15.847 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/Users/naga-pt7740/Downloads/apache-tomcat-10.1.30
+15-Oct-2024 15:49:15.847 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/Users/naga-pt7740/Documents/INR Codings from GIT/ProblemSolving/ZOHO PT/inventory-management-system
+15-Oct-2024 15:49:15.847 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/Users/naga-pt7740/Documents/INR Codings from GIT/ProblemSolving/ZOHO PT/inventory-management-system/temp
+15-Oct-2024 15:49:15.847 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/Users/naga-pt7740/Documents/INR Codings from GIT/ProblemSolving/ZOHO PT/inventory-management-system/conf/logging.properties
+15-Oct-2024 15:49:15.847 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+15-Oct-2024 15:49:15.847 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -javaagent:/Applications/IntelliJ IDEA CE.app/Contents/lib/idea_rt.jar=51204:/Applications/IntelliJ IDEA CE.app/Contents/bin
+15-Oct-2024 15:49:15.847 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dfile.encoding=UTF-8
+15-Oct-2024 15:49:15.847 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stdout.encoding=UTF-8
+15-Oct-2024 15:49:15.847 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stderr.encoding=UTF-8
+15-Oct-2024 15:49:15.852 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/Users/naga-pt7740/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+15-Oct-2024 15:49:15.993 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8082"]
+15-Oct-2024 15:49:16.004 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [232] milliseconds
+15-Oct-2024 15:49:16.038 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+15-Oct-2024 15:49:16.038 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/10.1.30]
+15-Oct-2024 15:49:16.042 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [/Users/naga-pt7740/Documents/INR Codings from GIT/ProblemSolving/ZOHO PT/inventory-management-system/conf/Catalina/localhost/ims.xml]
+15-Oct-2024 15:49:16.599 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+15-Oct-2024 15:49:16.846 WARNING [main] org.glassfish.jersey.message.internal.MessagingBinders$EnabledProvidersBinder.bindToBinder A class jakarta.activation.DataSource for a default provider MessageBodyWriter<jakarta.activation.DataSource> was not found. The provider is not available.
+15-Oct-2024 15:49:16.863 WARNING [main] org.glassfish.jersey.server.wadl.WadlFeature.configure JAX-B API not found . WADL feature is disabled.
+15-Oct-2024 15:49:17.027 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/Users/naga-pt7740/Documents/INR Codings from GIT/ProblemSolving/ZOHO PT/inventory-management-system/conf/Catalina/localhost/ims.xml] has finished in [985] ms
+15-Oct-2024 15:49:17.029 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8082"]
+15-Oct-2024 15:49:17.033 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [1027] milliseconds
+15-Oct-2024 15:50:30.178 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8082"]
+15-Oct-2024 15:50:30.179 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+15-Oct-2024 15:50:30.185 WARNING [Thread-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [ims] registered the JDBC driver [com.mysql.cj.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+15-Oct-2024 15:50:30.185 WARNING [Thread-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [ims] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:269)
+ java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1852)
+ java.base/java.lang.ref.ReferenceQueue.await(ReferenceQueue.java:79)
+ java.base/java.lang.ref.ReferenceQueue.remove0(ReferenceQueue.java:151)
+ java.base/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:229)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:91)
+ java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+ java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+ java.base/java.lang.Thread.run(Thread.java:1575)
+15-Oct-2024 15:50:30.187 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8082"]
+15-Oct-2024 15:50:30.189 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8082"]
+15-Oct-2024 15:50:33.933 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/10.1.30
+15-Oct-2024 15:50:33.935 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Sep 13 2024 20:26:16 UTC
+15-Oct-2024 15:50:33.935 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 10.1.30.0
+15-Oct-2024 15:50:33.935 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Mac OS X
+15-Oct-2024 15:50:33.935 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            14.7
+15-Oct-2024 15:50:33.935 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          aarch64
+15-Oct-2024 15:50:33.935 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /Users/naga-pt7740/Library/Java/JavaVirtualMachines/openjdk-23/Contents/Home
+15-Oct-2024 15:50:33.935 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           23+37-2369
+15-Oct-2024 15:50:33.935 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+15-Oct-2024 15:50:33.935 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /Users/naga-pt7740/Documents/INR Codings from GIT/ProblemSolving/ZOHO PT/inventory-management-system
+15-Oct-2024 15:50:33.935 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /Users/naga-pt7740/Downloads/apache-tomcat-10.1.30
+15-Oct-2024 15:50:33.940 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+15-Oct-2024 15:50:33.940 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+15-Oct-2024 15:50:33.940 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+15-Oct-2024 15:50:33.940 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+15-Oct-2024 15:50:33.940 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+15-Oct-2024 15:50:33.940 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/Users/naga-pt7740/Downloads/apache-tomcat-10.1.30
+15-Oct-2024 15:50:33.940 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/Users/naga-pt7740/Documents/INR Codings from GIT/ProblemSolving/ZOHO PT/inventory-management-system
+15-Oct-2024 15:50:33.940 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/Users/naga-pt7740/Documents/INR Codings from GIT/ProblemSolving/ZOHO PT/inventory-management-system/temp
+15-Oct-2024 15:50:33.940 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/Users/naga-pt7740/Documents/INR Codings from GIT/ProblemSolving/ZOHO PT/inventory-management-system/conf/logging.properties
+15-Oct-2024 15:50:33.940 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+15-Oct-2024 15:50:33.940 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -javaagent:/Applications/IntelliJ IDEA CE.app/Contents/lib/idea_rt.jar=51215:/Applications/IntelliJ IDEA CE.app/Contents/bin
+15-Oct-2024 15:50:33.940 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dfile.encoding=UTF-8
+15-Oct-2024 15:50:33.940 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stdout.encoding=UTF-8
+15-Oct-2024 15:50:33.940 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stderr.encoding=UTF-8
+15-Oct-2024 15:50:33.946 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/Users/naga-pt7740/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+15-Oct-2024 15:50:34.074 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8082"]
+15-Oct-2024 15:50:34.082 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [217] milliseconds
+15-Oct-2024 15:50:34.096 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+15-Oct-2024 15:50:34.096 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/10.1.30]
+15-Oct-2024 15:50:34.099 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [/Users/naga-pt7740/Documents/INR Codings from GIT/ProblemSolving/ZOHO PT/inventory-management-system/conf/Catalina/localhost/ims.xml]
+15-Oct-2024 15:50:34.679 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+15-Oct-2024 15:50:34.924 WARNING [main] org.glassfish.jersey.message.internal.MessagingBinders$EnabledProvidersBinder.bindToBinder A class jakarta.activation.DataSource for a default provider MessageBodyWriter<jakarta.activation.DataSource> was not found. The provider is not available.
+15-Oct-2024 15:50:34.943 WARNING [main] org.glassfish.jersey.server.wadl.WadlFeature.configure JAX-B API not found . WADL feature is disabled.
+15-Oct-2024 15:50:35.114 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/Users/naga-pt7740/Documents/INR Codings from GIT/ProblemSolving/ZOHO PT/inventory-management-system/conf/Catalina/localhost/ims.xml] has finished in [1,015] ms
+15-Oct-2024 15:50:35.116 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8082"]
+15-Oct-2024 15:50:35.120 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [1037] milliseconds
+15-Oct-2024 16:10:54.276 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8082"]
+15-Oct-2024 16:10:54.278 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+15-Oct-2024 16:10:54.288 WARNING [Thread-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [ims] registered the JDBC driver [com.mysql.cj.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+15-Oct-2024 16:10:54.288 WARNING [Thread-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [ims] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:269)
+ java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1852)
+ java.base/java.lang.ref.ReferenceQueue.await(ReferenceQueue.java:79)
+ java.base/java.lang.ref.ReferenceQueue.remove0(ReferenceQueue.java:151)
+ java.base/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:229)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:91)
+ java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+ java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+ java.base/java.lang.Thread.run(Thread.java:1575)
+15-Oct-2024 16:10:54.290 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8082"]
+15-Oct-2024 16:10:54.302 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8082"]
+15-Oct-2024 16:10:55.708 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/10.1.30
+15-Oct-2024 16:10:55.710 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Sep 13 2024 20:26:16 UTC
+15-Oct-2024 16:10:55.710 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 10.1.30.0
+15-Oct-2024 16:10:55.710 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Mac OS X
+15-Oct-2024 16:10:55.710 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            14.7
+15-Oct-2024 16:10:55.710 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          aarch64
+15-Oct-2024 16:10:55.710 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /Users/naga-pt7740/Library/Java/JavaVirtualMachines/openjdk-23/Contents/Home
+15-Oct-2024 16:10:55.710 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           23+37-2369
+15-Oct-2024 16:10:55.710 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+15-Oct-2024 16:10:55.710 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /Users/naga-pt7740/Documents/INR Codings from GIT/ProblemSolving/ZOHO PT/inventory-management-system
+15-Oct-2024 16:10:55.710 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /Users/naga-pt7740/Downloads/apache-tomcat-10.1.30
+15-Oct-2024 16:10:55.715 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+15-Oct-2024 16:10:55.715 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+15-Oct-2024 16:10:55.715 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+15-Oct-2024 16:10:55.715 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+15-Oct-2024 16:10:55.715 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+15-Oct-2024 16:10:55.715 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/Users/naga-pt7740/Downloads/apache-tomcat-10.1.30
+15-Oct-2024 16:10:55.715 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/Users/naga-pt7740/Documents/INR Codings from GIT/ProblemSolving/ZOHO PT/inventory-management-system
+15-Oct-2024 16:10:55.715 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/Users/naga-pt7740/Documents/INR Codings from GIT/ProblemSolving/ZOHO PT/inventory-management-system/temp
+15-Oct-2024 16:10:55.716 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/Users/naga-pt7740/Documents/INR Codings from GIT/ProblemSolving/ZOHO PT/inventory-management-system/conf/logging.properties
+15-Oct-2024 16:10:55.716 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+15-Oct-2024 16:10:55.716 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -javaagent:/Applications/IntelliJ IDEA CE.app/Contents/lib/idea_rt.jar=51278:/Applications/IntelliJ IDEA CE.app/Contents/bin
+15-Oct-2024 16:10:55.716 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dfile.encoding=UTF-8
+15-Oct-2024 16:10:55.716 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stdout.encoding=UTF-8
+15-Oct-2024 16:10:55.716 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stderr.encoding=UTF-8
+15-Oct-2024 16:10:55.721 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/Users/naga-pt7740/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+15-Oct-2024 16:10:55.876 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8082"]
+15-Oct-2024 16:10:55.888 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [253] milliseconds
+15-Oct-2024 16:10:55.912 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+15-Oct-2024 16:10:55.913 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/10.1.30]
+15-Oct-2024 16:10:55.918 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [/Users/naga-pt7740/Documents/INR Codings from GIT/ProblemSolving/ZOHO PT/inventory-management-system/conf/Catalina/localhost/ims.xml]
+15-Oct-2024 16:10:56.535 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+15-Oct-2024 16:10:56.797 WARNING [main] org.glassfish.jersey.message.internal.MessagingBinders$EnabledProvidersBinder.bindToBinder A class jakarta.activation.DataSource for a default provider MessageBodyWriter<jakarta.activation.DataSource> was not found. The provider is not available.
+15-Oct-2024 16:10:56.814 WARNING [main] org.glassfish.jersey.server.wadl.WadlFeature.configure JAX-B API not found . WADL feature is disabled.
+15-Oct-2024 16:10:56.981 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/Users/naga-pt7740/Documents/INR Codings from GIT/ProblemSolving/ZOHO PT/inventory-management-system/conf/Catalina/localhost/ims.xml] has finished in [1,063] ms
+15-Oct-2024 16:10:56.982 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8082"]
+15-Oct-2024 16:10:56.986 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [1097] milliseconds
+15-Oct-2024 16:12:54.929 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8082"]
+15-Oct-2024 16:12:54.931 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+15-Oct-2024 16:12:54.937 WARNING [Thread-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [ims] registered the JDBC driver [com.mysql.cj.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+15-Oct-2024 16:12:54.938 WARNING [Thread-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [ims] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:269)
+ java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1852)
+ java.base/java.lang.ref.ReferenceQueue.await(ReferenceQueue.java:79)
+ java.base/java.lang.ref.ReferenceQueue.remove0(ReferenceQueue.java:151)
+ java.base/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:229)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:91)
+ java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+ java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+ java.base/java.lang.Thread.run(Thread.java:1575)
+15-Oct-2024 16:12:54.940 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8082"]
+15-Oct-2024 16:12:54.942 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8082"]
+15-Oct-2024 16:12:56.092 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/10.1.30
+15-Oct-2024 16:12:56.094 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Sep 13 2024 20:26:16 UTC
+15-Oct-2024 16:12:56.094 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 10.1.30.0
+15-Oct-2024 16:12:56.094 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Mac OS X
+15-Oct-2024 16:12:56.094 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            14.7
+15-Oct-2024 16:12:56.094 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          aarch64
+15-Oct-2024 16:12:56.095 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /Users/naga-pt7740/Library/Java/JavaVirtualMachines/openjdk-23/Contents/Home
+15-Oct-2024 16:12:56.095 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           23+37-2369
+15-Oct-2024 16:12:56.095 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+15-Oct-2024 16:12:56.095 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /Users/naga-pt7740/Documents/INR Codings from GIT/ProblemSolving/ZOHO PT/inventory-management-system
+15-Oct-2024 16:12:56.095 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /Users/naga-pt7740/Downloads/apache-tomcat-10.1.30
+15-Oct-2024 16:12:56.099 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+15-Oct-2024 16:12:56.099 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+15-Oct-2024 16:12:56.099 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+15-Oct-2024 16:12:56.100 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+15-Oct-2024 16:12:56.100 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+15-Oct-2024 16:12:56.100 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/Users/naga-pt7740/Downloads/apache-tomcat-10.1.30
+15-Oct-2024 16:12:56.100 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/Users/naga-pt7740/Documents/INR Codings from GIT/ProblemSolving/ZOHO PT/inventory-management-system
+15-Oct-2024 16:12:56.100 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/Users/naga-pt7740/Documents/INR Codings from GIT/ProblemSolving/ZOHO PT/inventory-management-system/temp
+15-Oct-2024 16:12:56.100 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/Users/naga-pt7740/Documents/INR Codings from GIT/ProblemSolving/ZOHO PT/inventory-management-system/conf/logging.properties
+15-Oct-2024 16:12:56.100 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+15-Oct-2024 16:12:56.100 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -javaagent:/Applications/IntelliJ IDEA CE.app/Contents/lib/idea_rt.jar=51296:/Applications/IntelliJ IDEA CE.app/Contents/bin
+15-Oct-2024 16:12:56.100 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dfile.encoding=UTF-8
+15-Oct-2024 16:12:56.100 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stdout.encoding=UTF-8
+15-Oct-2024 16:12:56.100 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stderr.encoding=UTF-8
+15-Oct-2024 16:12:56.105 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/Users/naga-pt7740/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+15-Oct-2024 16:12:56.252 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8082"]
+15-Oct-2024 16:12:56.262 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [240] milliseconds
+15-Oct-2024 16:12:56.278 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+15-Oct-2024 16:12:56.278 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/10.1.30]
+15-Oct-2024 16:12:56.281 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [/Users/naga-pt7740/Documents/INR Codings from GIT/ProblemSolving/ZOHO PT/inventory-management-system/conf/Catalina/localhost/ims.xml]
+15-Oct-2024 16:12:56.851 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+15-Oct-2024 16:12:57.100 WARNING [main] org.glassfish.jersey.message.internal.MessagingBinders$EnabledProvidersBinder.bindToBinder A class jakarta.activation.DataSource for a default provider MessageBodyWriter<jakarta.activation.DataSource> was not found. The provider is not available.
+15-Oct-2024 16:12:57.119 WARNING [main] org.glassfish.jersey.server.wadl.WadlFeature.configure JAX-B API not found . WADL feature is disabled.
+15-Oct-2024 16:12:57.287 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/Users/naga-pt7740/Documents/INR Codings from GIT/ProblemSolving/ZOHO PT/inventory-management-system/conf/Catalina/localhost/ims.xml] has finished in [1,006] ms
+15-Oct-2024 16:12:57.289 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8082"]
+15-Oct-2024 16:12:57.293 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [1030] milliseconds
+15-Oct-2024 16:21:45.979 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8082"]
+15-Oct-2024 16:21:45.980 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+15-Oct-2024 16:21:45.989 WARNING [Thread-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [ims] registered the JDBC driver [com.mysql.cj.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+15-Oct-2024 16:21:45.989 WARNING [Thread-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [ims] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:269)
+ java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1852)
+ java.base/java.lang.ref.ReferenceQueue.await(ReferenceQueue.java:79)
+ java.base/java.lang.ref.ReferenceQueue.remove0(ReferenceQueue.java:151)
+ java.base/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:229)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:91)
+ java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+ java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+ java.base/java.lang.Thread.run(Thread.java:1575)
+15-Oct-2024 16:21:45.992 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8082"]
+15-Oct-2024 16:21:46.005 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8082"]
+15-Oct-2024 16:21:47.186 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/10.1.30
+15-Oct-2024 16:21:47.188 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Sep 13 2024 20:26:16 UTC
+15-Oct-2024 16:21:47.188 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 10.1.30.0
+15-Oct-2024 16:21:47.188 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Mac OS X
+15-Oct-2024 16:21:47.188 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            14.7
+15-Oct-2024 16:21:47.188 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          aarch64
+15-Oct-2024 16:21:47.188 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /Users/naga-pt7740/Library/Java/JavaVirtualMachines/openjdk-23/Contents/Home
+15-Oct-2024 16:21:47.188 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           23+37-2369
+15-Oct-2024 16:21:47.188 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+15-Oct-2024 16:21:47.188 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /Users/naga-pt7740/Documents/INR Codings from GIT/ProblemSolving/ZOHO PT/inventory-management-system
+15-Oct-2024 16:21:47.188 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /Users/naga-pt7740/Downloads/apache-tomcat-10.1.30
+15-Oct-2024 16:21:47.193 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+15-Oct-2024 16:21:47.193 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+15-Oct-2024 16:21:47.193 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+15-Oct-2024 16:21:47.193 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+15-Oct-2024 16:21:47.193 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+15-Oct-2024 16:21:47.193 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/Users/naga-pt7740/Downloads/apache-tomcat-10.1.30
+15-Oct-2024 16:21:47.193 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/Users/naga-pt7740/Documents/INR Codings from GIT/ProblemSolving/ZOHO PT/inventory-management-system
+15-Oct-2024 16:21:47.193 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/Users/naga-pt7740/Documents/INR Codings from GIT/ProblemSolving/ZOHO PT/inventory-management-system/temp
+15-Oct-2024 16:21:47.193 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/Users/naga-pt7740/Documents/INR Codings from GIT/ProblemSolving/ZOHO PT/inventory-management-system/conf/logging.properties
+15-Oct-2024 16:21:47.193 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+15-Oct-2024 16:21:47.194 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -javaagent:/Applications/IntelliJ IDEA CE.app/Contents/lib/idea_rt.jar=51375:/Applications/IntelliJ IDEA CE.app/Contents/bin
+15-Oct-2024 16:21:47.194 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dfile.encoding=UTF-8
+15-Oct-2024 16:21:47.194 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stdout.encoding=UTF-8
+15-Oct-2024 16:21:47.194 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stderr.encoding=UTF-8
+15-Oct-2024 16:21:47.200 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/Users/naga-pt7740/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+15-Oct-2024 16:21:47.344 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8082"]
+15-Oct-2024 16:21:47.352 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [239] milliseconds
+15-Oct-2024 16:21:47.371 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+15-Oct-2024 16:21:47.372 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/10.1.30]
+15-Oct-2024 16:21:47.375 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [/Users/naga-pt7740/Documents/INR Codings from GIT/ProblemSolving/ZOHO PT/inventory-management-system/conf/Catalina/localhost/ims.xml]
+15-Oct-2024 16:21:47.980 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+15-Oct-2024 16:21:48.221 WARNING [main] org.glassfish.jersey.message.internal.MessagingBinders$EnabledProvidersBinder.bindToBinder A class jakarta.activation.DataSource for a default provider MessageBodyWriter<jakarta.activation.DataSource> was not found. The provider is not available.
+15-Oct-2024 16:21:48.244 WARNING [main] org.glassfish.jersey.server.wadl.WadlFeature.configure JAX-B API not found . WADL feature is disabled.
+15-Oct-2024 16:21:48.417 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/Users/naga-pt7740/Documents/INR Codings from GIT/ProblemSolving/ZOHO PT/inventory-management-system/conf/Catalina/localhost/ims.xml] has finished in [1,043] ms
+15-Oct-2024 16:21:48.418 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8082"]
+15-Oct-2024 16:21:48.423 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [1069] milliseconds
+15-Oct-2024 16:24:47.667 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8082"]
+15-Oct-2024 16:24:47.668 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+15-Oct-2024 16:24:47.674 WARNING [Thread-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [ims] registered the JDBC driver [com.mysql.cj.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+15-Oct-2024 16:24:47.674 WARNING [Thread-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [ims] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:269)
+ java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1852)
+ java.base/java.lang.ref.ReferenceQueue.await(ReferenceQueue.java:79)
+ java.base/java.lang.ref.ReferenceQueue.remove0(ReferenceQueue.java:151)
+ java.base/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:229)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:91)
+ java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+ java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+ java.base/java.lang.Thread.run(Thread.java:1575)
+15-Oct-2024 16:24:47.676 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8082"]
+15-Oct-2024 16:24:47.679 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8082"]
+15-Oct-2024 16:24:48.851 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/10.1.30
+15-Oct-2024 16:24:48.853 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Sep 13 2024 20:26:16 UTC
+15-Oct-2024 16:24:48.853 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 10.1.30.0
+15-Oct-2024 16:24:48.853 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Mac OS X
+15-Oct-2024 16:24:48.853 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            14.7
+15-Oct-2024 16:24:48.853 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          aarch64
+15-Oct-2024 16:24:48.853 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /Users/naga-pt7740/Library/Java/JavaVirtualMachines/openjdk-23/Contents/Home
+15-Oct-2024 16:24:48.853 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           23+37-2369
+15-Oct-2024 16:24:48.853 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+15-Oct-2024 16:24:48.853 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /Users/naga-pt7740/Documents/INR Codings from GIT/ProblemSolving/ZOHO PT/inventory-management-system
+15-Oct-2024 16:24:48.854 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /Users/naga-pt7740/Downloads/apache-tomcat-10.1.30
+15-Oct-2024 16:24:48.858 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+15-Oct-2024 16:24:48.858 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+15-Oct-2024 16:24:48.858 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+15-Oct-2024 16:24:48.858 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+15-Oct-2024 16:24:48.858 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+15-Oct-2024 16:24:48.858 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/Users/naga-pt7740/Downloads/apache-tomcat-10.1.30
+15-Oct-2024 16:24:48.858 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/Users/naga-pt7740/Documents/INR Codings from GIT/ProblemSolving/ZOHO PT/inventory-management-system
+15-Oct-2024 16:24:48.858 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/Users/naga-pt7740/Documents/INR Codings from GIT/ProblemSolving/ZOHO PT/inventory-management-system/temp
+15-Oct-2024 16:24:48.859 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/Users/naga-pt7740/Documents/INR Codings from GIT/ProblemSolving/ZOHO PT/inventory-management-system/conf/logging.properties
+15-Oct-2024 16:24:48.859 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+15-Oct-2024 16:24:48.859 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -javaagent:/Applications/IntelliJ IDEA CE.app/Contents/lib/idea_rt.jar=51400:/Applications/IntelliJ IDEA CE.app/Contents/bin
+15-Oct-2024 16:24:48.859 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dfile.encoding=UTF-8
+15-Oct-2024 16:24:48.859 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stdout.encoding=UTF-8
+15-Oct-2024 16:24:48.859 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stderr.encoding=UTF-8
+15-Oct-2024 16:24:48.863 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/Users/naga-pt7740/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+15-Oct-2024 16:24:49.025 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8082"]
+15-Oct-2024 16:24:49.034 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [255] milliseconds
+15-Oct-2024 16:24:49.049 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+15-Oct-2024 16:24:49.050 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/10.1.30]
+15-Oct-2024 16:24:49.054 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [/Users/naga-pt7740/Documents/INR Codings from GIT/ProblemSolving/ZOHO PT/inventory-management-system/conf/Catalina/localhost/ims.xml]
+15-Oct-2024 16:24:49.620 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+15-Oct-2024 16:24:49.876 WARNING [main] org.glassfish.jersey.message.internal.MessagingBinders$EnabledProvidersBinder.bindToBinder A class jakarta.activation.DataSource for a default provider MessageBodyWriter<jakarta.activation.DataSource> was not found. The provider is not available.
+15-Oct-2024 16:24:49.897 WARNING [main] org.glassfish.jersey.server.wadl.WadlFeature.configure JAX-B API not found . WADL feature is disabled.
+15-Oct-2024 16:24:50.067 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/Users/naga-pt7740/Documents/INR Codings from GIT/ProblemSolving/ZOHO PT/inventory-management-system/conf/Catalina/localhost/ims.xml] has finished in [1,013] ms
+15-Oct-2024 16:24:50.068 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8082"]
+15-Oct-2024 16:24:50.072 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [1036] milliseconds
+15-Oct-2024 16:26:19.196 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8082"]
+15-Oct-2024 16:26:19.198 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+15-Oct-2024 16:26:19.204 WARNING [Thread-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [ims] registered the JDBC driver [com.mysql.cj.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+15-Oct-2024 16:26:19.204 WARNING [Thread-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [ims] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:269)
+ java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1852)
+ java.base/java.lang.ref.ReferenceQueue.await(ReferenceQueue.java:79)
+ java.base/java.lang.ref.ReferenceQueue.remove0(ReferenceQueue.java:151)
+ java.base/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:229)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:91)
+ java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+ java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+ java.base/java.lang.Thread.run(Thread.java:1575)
+15-Oct-2024 16:26:19.207 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8082"]
+15-Oct-2024 16:26:19.209 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8082"]
+15-Oct-2024 16:26:20.325 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/10.1.30
+15-Oct-2024 16:26:20.326 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Sep 13 2024 20:26:16 UTC
+15-Oct-2024 16:26:20.326 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 10.1.30.0
+15-Oct-2024 16:26:20.326 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Mac OS X
+15-Oct-2024 16:26:20.326 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            14.7
+15-Oct-2024 16:26:20.326 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          aarch64
+15-Oct-2024 16:26:20.326 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /Users/naga-pt7740/Library/Java/JavaVirtualMachines/openjdk-23/Contents/Home
+15-Oct-2024 16:26:20.326 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           23+37-2369
+15-Oct-2024 16:26:20.326 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+15-Oct-2024 16:26:20.326 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /Users/naga-pt7740/Documents/INR Codings from GIT/ProblemSolving/ZOHO PT/inventory-management-system
+15-Oct-2024 16:26:20.326 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /Users/naga-pt7740/Downloads/apache-tomcat-10.1.30
+15-Oct-2024 16:26:20.331 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+15-Oct-2024 16:26:20.331 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+15-Oct-2024 16:26:20.331 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+15-Oct-2024 16:26:20.331 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+15-Oct-2024 16:26:20.331 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+15-Oct-2024 16:26:20.331 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/Users/naga-pt7740/Downloads/apache-tomcat-10.1.30
+15-Oct-2024 16:26:20.331 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/Users/naga-pt7740/Documents/INR Codings from GIT/ProblemSolving/ZOHO PT/inventory-management-system
+15-Oct-2024 16:26:20.331 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/Users/naga-pt7740/Documents/INR Codings from GIT/ProblemSolving/ZOHO PT/inventory-management-system/temp
+15-Oct-2024 16:26:20.331 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/Users/naga-pt7740/Documents/INR Codings from GIT/ProblemSolving/ZOHO PT/inventory-management-system/conf/logging.properties
+15-Oct-2024 16:26:20.331 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+15-Oct-2024 16:26:20.331 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -javaagent:/Applications/IntelliJ IDEA CE.app/Contents/lib/idea_rt.jar=51414:/Applications/IntelliJ IDEA CE.app/Contents/bin
+15-Oct-2024 16:26:20.331 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dfile.encoding=UTF-8
+15-Oct-2024 16:26:20.331 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stdout.encoding=UTF-8
+15-Oct-2024 16:26:20.331 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stderr.encoding=UTF-8
+15-Oct-2024 16:26:20.335 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/Users/naga-pt7740/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+15-Oct-2024 16:26:20.482 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8082"]
+15-Oct-2024 16:26:20.497 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [245] milliseconds
+15-Oct-2024 16:26:20.516 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+15-Oct-2024 16:26:20.516 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/10.1.30]
+15-Oct-2024 16:26:20.520 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [/Users/naga-pt7740/Documents/INR Codings from GIT/ProblemSolving/ZOHO PT/inventory-management-system/conf/Catalina/localhost/ims.xml]
+15-Oct-2024 16:26:21.100 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+15-Oct-2024 16:26:21.342 WARNING [main] org.glassfish.jersey.message.internal.MessagingBinders$EnabledProvidersBinder.bindToBinder A class jakarta.activation.DataSource for a default provider MessageBodyWriter<jakarta.activation.DataSource> was not found. The provider is not available.
+15-Oct-2024 16:26:21.364 WARNING [main] org.glassfish.jersey.server.wadl.WadlFeature.configure JAX-B API not found . WADL feature is disabled.
+15-Oct-2024 16:26:21.539 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/Users/naga-pt7740/Documents/INR Codings from GIT/ProblemSolving/ZOHO PT/inventory-management-system/conf/Catalina/localhost/ims.xml] has finished in [1,019] ms
+15-Oct-2024 16:26:21.541 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8082"]
+15-Oct-2024 16:26:21.545 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [1047] milliseconds
+15-Oct-2024 16:27:16.128 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8082"]
+15-Oct-2024 16:27:16.130 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+15-Oct-2024 16:27:16.135 WARNING [Thread-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [ims] registered the JDBC driver [com.mysql.cj.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+15-Oct-2024 16:27:16.136 WARNING [Thread-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [ims] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:269)
+ java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1852)
+ java.base/java.lang.ref.ReferenceQueue.await(ReferenceQueue.java:79)
+ java.base/java.lang.ref.ReferenceQueue.remove0(ReferenceQueue.java:151)
+ java.base/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:229)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:91)
+ java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+ java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+ java.base/java.lang.Thread.run(Thread.java:1575)
+15-Oct-2024 16:27:16.138 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8082"]
+15-Oct-2024 16:27:16.139 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8082"]
+15-Oct-2024 16:27:17.345 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/10.1.30
+15-Oct-2024 16:27:17.347 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Sep 13 2024 20:26:16 UTC
+15-Oct-2024 16:27:17.347 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 10.1.30.0
+15-Oct-2024 16:27:17.347 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Mac OS X
+15-Oct-2024 16:27:17.347 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            14.7
+15-Oct-2024 16:27:17.347 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          aarch64
+15-Oct-2024 16:27:17.347 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /Users/naga-pt7740/Library/Java/JavaVirtualMachines/openjdk-23/Contents/Home
+15-Oct-2024 16:27:17.347 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           23+37-2369
+15-Oct-2024 16:27:17.347 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+15-Oct-2024 16:27:17.347 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /Users/naga-pt7740/Documents/INR Codings from GIT/ProblemSolving/ZOHO PT/inventory-management-system
+15-Oct-2024 16:27:17.347 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /Users/naga-pt7740/Downloads/apache-tomcat-10.1.30
+15-Oct-2024 16:27:17.352 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+15-Oct-2024 16:27:17.352 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+15-Oct-2024 16:27:17.352 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+15-Oct-2024 16:27:17.352 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+15-Oct-2024 16:27:17.353 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+15-Oct-2024 16:27:17.353 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/Users/naga-pt7740/Downloads/apache-tomcat-10.1.30
+15-Oct-2024 16:27:17.353 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/Users/naga-pt7740/Documents/INR Codings from GIT/ProblemSolving/ZOHO PT/inventory-management-system
+15-Oct-2024 16:27:17.353 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/Users/naga-pt7740/Documents/INR Codings from GIT/ProblemSolving/ZOHO PT/inventory-management-system/temp
+15-Oct-2024 16:27:17.353 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/Users/naga-pt7740/Documents/INR Codings from GIT/ProblemSolving/ZOHO PT/inventory-management-system/conf/logging.properties
+15-Oct-2024 16:27:17.353 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+15-Oct-2024 16:27:17.353 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -javaagent:/Applications/IntelliJ IDEA CE.app/Contents/lib/idea_rt.jar=51427:/Applications/IntelliJ IDEA CE.app/Contents/bin
+15-Oct-2024 16:27:17.353 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dfile.encoding=UTF-8
+15-Oct-2024 16:27:17.353 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stdout.encoding=UTF-8
+15-Oct-2024 16:27:17.353 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stderr.encoding=UTF-8
+15-Oct-2024 16:27:17.359 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/Users/naga-pt7740/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+15-Oct-2024 16:27:17.497 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8082"]
+15-Oct-2024 16:27:17.506 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [234] milliseconds
+15-Oct-2024 16:27:17.525 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+15-Oct-2024 16:27:17.525 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/10.1.30]
+15-Oct-2024 16:27:17.529 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [/Users/naga-pt7740/Documents/INR Codings from GIT/ProblemSolving/ZOHO PT/inventory-management-system/conf/Catalina/localhost/ims.xml]
+15-Oct-2024 16:27:18.118 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+15-Oct-2024 16:27:18.361 WARNING [main] org.glassfish.jersey.message.internal.MessagingBinders$EnabledProvidersBinder.bindToBinder A class jakarta.activation.DataSource for a default provider MessageBodyWriter<jakarta.activation.DataSource> was not found. The provider is not available.
+15-Oct-2024 16:27:18.383 WARNING [main] org.glassfish.jersey.server.wadl.WadlFeature.configure JAX-B API not found . WADL feature is disabled.
+15-Oct-2024 16:27:18.550 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/Users/naga-pt7740/Documents/INR Codings from GIT/ProblemSolving/ZOHO PT/inventory-management-system/conf/Catalina/localhost/ims.xml] has finished in [1,021] ms
+15-Oct-2024 16:27:18.552 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8082"]
+15-Oct-2024 16:27:18.556 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [1049] milliseconds
+15-Oct-2024 16:28:09.529 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8082"]
+15-Oct-2024 16:28:09.530 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+15-Oct-2024 16:28:09.536 WARNING [Thread-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [ims] registered the JDBC driver [com.mysql.cj.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+15-Oct-2024 16:28:09.536 WARNING [Thread-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [ims] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:269)
+ java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1852)
+ java.base/java.lang.ref.ReferenceQueue.await(ReferenceQueue.java:79)
+ java.base/java.lang.ref.ReferenceQueue.remove0(ReferenceQueue.java:151)
+ java.base/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:229)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:91)
+ java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+ java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+ java.base/java.lang.Thread.run(Thread.java:1575)
+15-Oct-2024 16:28:09.538 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8082"]
+15-Oct-2024 16:28:09.540 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8082"]
+15-Oct-2024 16:28:10.681 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/10.1.30
+15-Oct-2024 16:28:10.683 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Sep 13 2024 20:26:16 UTC
+15-Oct-2024 16:28:10.683 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 10.1.30.0
+15-Oct-2024 16:28:10.683 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Mac OS X
+15-Oct-2024 16:28:10.683 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            14.7
+15-Oct-2024 16:28:10.683 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          aarch64
+15-Oct-2024 16:28:10.683 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /Users/naga-pt7740/Library/Java/JavaVirtualMachines/openjdk-23/Contents/Home
+15-Oct-2024 16:28:10.683 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           23+37-2369
+15-Oct-2024 16:28:10.683 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+15-Oct-2024 16:28:10.683 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /Users/naga-pt7740/Documents/INR Codings from GIT/ProblemSolving/ZOHO PT/inventory-management-system
+15-Oct-2024 16:28:10.683 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /Users/naga-pt7740/Downloads/apache-tomcat-10.1.30
+15-Oct-2024 16:28:10.689 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+15-Oct-2024 16:28:10.689 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+15-Oct-2024 16:28:10.689 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+15-Oct-2024 16:28:10.689 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+15-Oct-2024 16:28:10.689 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+15-Oct-2024 16:28:10.689 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/Users/naga-pt7740/Downloads/apache-tomcat-10.1.30
+15-Oct-2024 16:28:10.689 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/Users/naga-pt7740/Documents/INR Codings from GIT/ProblemSolving/ZOHO PT/inventory-management-system
+15-Oct-2024 16:28:10.689 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/Users/naga-pt7740/Documents/INR Codings from GIT/ProblemSolving/ZOHO PT/inventory-management-system/temp
+15-Oct-2024 16:28:10.689 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/Users/naga-pt7740/Documents/INR Codings from GIT/ProblemSolving/ZOHO PT/inventory-management-system/conf/logging.properties
+15-Oct-2024 16:28:10.689 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+15-Oct-2024 16:28:10.689 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -javaagent:/Applications/IntelliJ IDEA CE.app/Contents/lib/idea_rt.jar=51437:/Applications/IntelliJ IDEA CE.app/Contents/bin
+15-Oct-2024 16:28:10.689 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dfile.encoding=UTF-8
+15-Oct-2024 16:28:10.689 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stdout.encoding=UTF-8
+15-Oct-2024 16:28:10.689 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.stderr.encoding=UTF-8
+15-Oct-2024 16:28:10.694 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/Users/naga-pt7740/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+15-Oct-2024 16:28:10.856 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8082"]
+15-Oct-2024 16:28:10.864 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [254] milliseconds
+15-Oct-2024 16:28:10.882 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+15-Oct-2024 16:28:10.882 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/10.1.30]
+15-Oct-2024 16:28:10.886 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [/Users/naga-pt7740/Documents/INR Codings from GIT/ProblemSolving/ZOHO PT/inventory-management-system/conf/Catalina/localhost/ims.xml]
+15-Oct-2024 16:28:11.440 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+15-Oct-2024 16:28:11.692 WARNING [main] org.glassfish.jersey.message.internal.MessagingBinders$EnabledProvidersBinder.bindToBinder A class jakarta.activation.DataSource for a default provider MessageBodyWriter<jakarta.activation.DataSource> was not found. The provider is not available.
+15-Oct-2024 16:28:11.712 WARNING [main] org.glassfish.jersey.server.wadl.WadlFeature.configure JAX-B API not found . WADL feature is disabled.
+15-Oct-2024 16:28:11.880 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/Users/naga-pt7740/Documents/INR Codings from GIT/ProblemSolving/ZOHO PT/inventory-management-system/conf/Catalina/localhost/ims.xml] has finished in [994] ms
+15-Oct-2024 16:28:11.881 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8082"]
+15-Oct-2024 16:28:11.885 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [1020] milliseconds

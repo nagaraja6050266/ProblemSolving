@@ -37,7 +37,6 @@ public class PurchasesDao {
                 // Add to purchase Items table
                 PurchaseLineItem updatedLineItem = insertPurchaseItemGetItem(purchase.getPurchaseId(), lineItem);
 
-
                 // If expiry date and itemId matches existing batch then add quantity
                 int updatedBatches = batchesDao.updateExistingBatch(purchase.getWarehouseId(), lineItem.getItemId(), lineItem.getExpiryDate(), lineItem.getQuantity());
                 if (updatedBatches == 0) {
@@ -45,26 +44,30 @@ public class PurchasesDao {
                     batchesDao.createBatch(purchase.getWarehouseId(), lineItem.getItemId(), lineItem.getQuantity(), lineItem.getExpiryDate());
                 }
                 preparedLineItems.add(updatedLineItem);
-
             }
 
             purchase.setPurchaseItems(preparedLineItems);
 
-            if(updateTotal(purchase.calculateTotalAmount())==0){
+            if(updateTotal(purchase.calculateTotalAmount()) == 0) {
                 throw new SQLException("Can't Update Total");
             }
 
-            connection.commit();
+            connection.commit();  // Commit transaction here
         } catch (SQLException e) {
-            System.out.println(e.toString()); //java.sql.SQLException: Can't call commit when autocommit=true
-            connection.rollback();
+            System.out.println(e.toString());
+            connection.rollback();  // Rollback in case of error
             throw e;
         } finally {
-            connection.setAutoCommit(true);
+            try {
+                connection.setAutoCommit(true);  // Ensure auto-commit is enabled afterward
+            } catch (SQLException e) {
+                System.out.println("Error resetting auto-commit: " + e.toString());
+            }
         }
 
         return purchase;
     }
+
 
     public List<PurchaseDto> getAllPurchases() throws SQLException{
         List<PurchaseDto> purchases =new ArrayList<>();
@@ -110,7 +113,6 @@ public class PurchasesDao {
     }
 
     private PurchaseLineItem insertPurchaseItemGetItem(int purchaseId, PurchaseLineItem lineItem) throws SQLException {
-        connection.setAutoCommit(false);
         String purchaseItemsQuery = "insert into purchaseItems (purchaseId, itemId, quantity, amount,expiryDate) values (?, ?, ?, ?,?)";
         PreparedStatement piStmt = connection.prepareStatement(purchaseItemsQuery);
         piStmt.setInt(1, purchaseId);
@@ -122,8 +124,6 @@ public class PurchasesDao {
         piStmt.setDate(5,lineItem.getExpiryDate());
 
         piStmt.executeUpdate();
-        connection.commit();
-        connection.setAutoCommit(true);
         return lineItem;
     }
 

@@ -22,15 +22,6 @@ public class BatchDto {
         this.quantity = quantity;
     }
 
-
-    public int getBatchId() {
-        return batchId;
-    }
-
-    public void setBatchId(int batchId) {
-        this.batchId = batchId;
-    }
-
     public Date getExpiryDate() {
         return expiryDate;
     }
@@ -73,6 +64,14 @@ public class BatchDto {
         this.itemId=rs.getInt("itemId");
         this.itemName=rs.getString("itemName");
         this.quantity=rs.getFloat("quantity");
+    }
+
+    public int getBatchId() {
+        return batchId;
+    }
+
+    public void setBatchId(int batchId) {
+        this.batchId = batchId;
     }
 
 }

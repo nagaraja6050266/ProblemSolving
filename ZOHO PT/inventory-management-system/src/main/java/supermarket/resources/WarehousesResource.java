@@ -3,8 +3,8 @@ package supermarket.resources;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
-import supermarket.dao.BatchesDao;
 import supermarket.dao.DaoDistributor;
+import supermarket.dao.AdjustedItemsDao;
 import supermarket.dao.WarehousesDao;
 import supermarket.models.Warehouse;
 import supermarket.publicUtilities.Utilities;
@@ -18,7 +18,8 @@ import java.util.List;
 public class WarehousesResource {
 
     WarehousesDao warehousesDao = DaoDistributor.getWarehousesDao();
-    BatchesDao batchesDao = DaoDistributor.getBatchesDao();
+    AdjustedItemsDao adjustedItemsDao =DaoDistributor.getExpiredItemsDao();
+
 
     public WarehousesResource() throws SQLException {
     }
@@ -107,10 +108,10 @@ public class WarehousesResource {
     }
 
     @GET
-    @Path("/items/expired")
+    @Path("/items/expiredGoods")
     public Response getExpiredItems(){
         try{
-            return Response.ok(batchesDao.expiredBatches()).build();
+            return Response.ok(adjustedItemsDao.reviewExpiredBatches()).build();
         } catch (Exception e){
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
                     .entity(Utilities.jsonMessage("Error: "+e.toString()))

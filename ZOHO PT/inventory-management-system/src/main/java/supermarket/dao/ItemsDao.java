@@ -21,27 +21,31 @@ public class ItemsDao {
 
         connection.setAutoCommit(false);
 
-        String itemQuery = "insert into items (itemName,categoryId,costPrice,sellingPrice) values(?,?,?,?,?)";
-        PreparedStatement statement = connection.prepareStatement(itemQuery, PreparedStatement.RETURN_GENERATED_KEYS);
-        statement.setString(1, itemWarehouseDto.getName());
-        statement.setInt(2, itemWarehouseDto.getCategoryId());
-        statement.setFloat(3, itemWarehouseDto.getCostPrice());
-        statement.setFloat(4, itemWarehouseDto.getSellingPrice());
-        statement.executeUpdate();
+        try {
+            String itemQuery = "insert into items (itemName,categoryId,costPrice,sellingPrice) values(?,?,?,?,?)";
+            PreparedStatement statement = connection.prepareStatement(itemQuery, PreparedStatement.RETURN_GENERATED_KEYS);
+            statement.setString(1, itemWarehouseDto.getName());
+            statement.setInt(2, itemWarehouseDto.getCategoryId());
+            statement.setFloat(3, itemWarehouseDto.getCostPrice());
+            statement.setFloat(4, itemWarehouseDto.getSellingPrice());
+            statement.executeUpdate();
 
-        itemWarehouseDto.setItemId(Utilities.getGeneratedKey(statement));
+            itemWarehouseDto.setItemId(Utilities.getGeneratedKey(statement));
 
-        String wareHouseQuery = "insert into warehouseitems (warehouseId,itemId,quantity) values (?,?,?)";
-        statement = connection.prepareStatement(wareHouseQuery);
-        statement.setInt(1, itemWarehouseDto.getWarehouseId());
-        statement.setInt(2, itemWarehouseDto.getItemId());
-        statement.setFloat(3, itemWarehouseDto.getQuantity());
-        statement.executeUpdate();
+            String wareHouseQuery = "insert into warehouseitems (warehouseId,itemId,quantity) values (?,?,?)";
+            statement = connection.prepareStatement(wareHouseQuery);
+            statement.setInt(1, itemWarehouseDto.getWarehouseId());
+            statement.setInt(2, itemWarehouseDto.getItemId());
+            statement.setFloat(3, itemWarehouseDto.getQuantity());
+            statement.executeUpdate();
 
-        connection.commit();
-        connection.setAutoCommit(true);
-
-
+        } catch (Exception e){
+            connection.rollback();
+            throw new SQLException(e.toString());
+        } finally {
+            connection.commit();
+            connection.setAutoCommit(true);
+        }
         return itemWarehouseDto;
     }
 

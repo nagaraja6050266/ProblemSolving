@@ -51,14 +51,6 @@ public class Utilities {
                 resultSet.getInt("capacity"));
     }
 
-    public static BatchDto createBatch(ResultSet resultSet) throws SQLException {
-        return new BatchDto(resultSet.getInt("batchId"),
-                resultSet.getInt("itemId"),
-                resultSet.getString("itemName"),
-                resultSet.getFloat("quantity"),
-                resultSet.getDate("expiryDate"));
-    }
-
     public static Sale createSale(ResultSet resultSet) throws SQLException {
         return new Sale(
                 resultSet.getInt("salesId"),

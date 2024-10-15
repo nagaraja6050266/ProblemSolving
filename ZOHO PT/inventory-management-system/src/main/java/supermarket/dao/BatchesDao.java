@@ -2,14 +2,17 @@ package supermarket.dao;
 
 import supermarket.database.Database;
 import supermarket.dto.BatchDto;
+import supermarket.dto.ExpiredBatch;
 
 import java.sql.*;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Queue;
 
 public class BatchesDao {
 
-    Connection connection= Database.getTransactionConn();
+    Connection connection= Database.getConnection();
 
     public BatchesDao() throws SQLException {
     }
@@ -73,7 +76,6 @@ public class BatchesDao {
         }
     }
 
-
     public int createBatch(int warehouseId,int itemId,float quantity,Date expiryDate) throws SQLException {
         String query = "insert into batches (warehouseId,itemId,quantity,expiryDate) values(?,?,?,?)";
         PreparedStatement stmt=connection.prepareStatement(query);
@@ -82,30 +84,6 @@ public class BatchesDao {
         stmt.setFloat(3,quantity);
         stmt.setDate(4,expiryDate);
         return stmt.executeUpdate();
-    }
-
-    public List<BatchDto> expiredBatches() throws SQLException {
-        String query="SELECT \n" +
-                "    b.batchId,\n" +
-                "    b.expiryDate,\n" +
-                "    b.itemId,\n" +
-                "    i.itemName,\n" +
-                "    b.quantity,\n" +
-                "    b.warehouseId\n" +
-                "FROM \n" +
-                "    batches AS b\n" +
-                "JOIN \n" +
-                "    items AS i \n" +
-                "    ON b.itemId = i.itemId\n" +
-                "WHERE \n" +
-                "    b.expiryDate < CURDATE();\n";
-        PreparedStatement stmt=connection.prepareStatement(query);
-        ResultSet rs=stmt.executeQuery();
-        List<BatchDto> expiredBatches=new ArrayList<>();
-        while(rs.next()){
-            expiredBatches.add(new BatchDto(rs));
-        }
-        return expiredBatches;
     }
 
 }
