@@ -3153,3 +3153,7 @@
 15-Oct-2024 16:51:38.869 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/Users/naga-pt7740/Documents/INR Codings from GIT/ProblemSolving/ZOHO PT/inventory-management-system/conf/Catalina/localhost/ims.xml] has finished in [998] ms
 15-Oct-2024 16:51:38.870 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8082"]
 15-Oct-2024 16:51:38.874 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [1022] milliseconds
+15-Oct-2024 17:07:52.914 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8082"]
+15-Oct-2024 17:07:52.916 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+15-Oct-2024 17:07:52.929 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8082"]
+15-Oct-2024 17:07:52.941 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8082"]
